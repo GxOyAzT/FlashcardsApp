@@ -59,11 +59,11 @@ namespace XTestsConsole
 
             //using (var db = new FlashcardsDbContext())
             //{
-            //    db.UserDbModels.Add(userDbModel2);
+            //    db.FlashcardsDbModels.Add(flashcardDbModelY1);
             //    db.SaveChanges();
             //}
 
-            var ans = (new CheckIfUserOwnGroup().Check(userDbModel1.Id, groupDbModel1.Id));
+            var ans = (new CheckIfIdExists()).Check(Guid.Parse("e404e72b-db96-4766-992e-177b38ca2450"));
         }
     }
 }

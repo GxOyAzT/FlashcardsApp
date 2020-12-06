@@ -49,3 +49,7 @@ go
 select * from fc.UserModelTbl
 select * from fc.GroupModelTbl
 select * from fc.FlashcardModelTbl
+
+Select * from fc.UserModelTbl um
+left join fc.GroupModelTbl gm on um.Id = gm.UserDbModelId
+left join fc.FlashcardModelTbl fm on gm.Id = fm.GroupDbModelId
