@@ -6,6 +6,6 @@ namespace DatabaseModuleInterface
 {
     public interface ICheckIfUserOwnGroup
     {
-        public bool Check(Guid userId, Guid groupId);
+        public bool Check(string userId, Guid groupId);
     }
 }

@@ -23,7 +23,6 @@ namespace DatabaseModule
 
         public DbSet<FlashcardDbModel> FlashcardsDbModels { get; set; }
         public DbSet<GroupDbModel> GroupDbModels { get; set; }
-        public DbSet<UserDbModel> UserDbModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,17 +42,6 @@ namespace DatabaseModule
                 entity.HasOne(e => e.GroupDbModel)
                     .WithMany(d => d.FlashcardDbModels)
                     .HasForeignKey(x => x.GroupDbModelId);
-            });
-
-            modelBuilder.Entity<UserDbModel>(entity =>
-            {
-                entity.ToTable("UserModelTbl", "fc");
-
-                entity.HasKey(e => e.Id);
-
-                entity.HasMany(e => e.GroupDbModels)
-                    .WithOne(d => d.UserDbModel)
-                    .HasForeignKey(x => x.UserDbModelId);
             });
         }
     }

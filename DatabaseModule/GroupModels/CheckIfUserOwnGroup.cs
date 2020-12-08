@@ -6,11 +6,11 @@ namespace DatabaseModule
 {
     public class CheckIfUserOwnGroup : ICheckIfUserOwnGroup
     {
-        public bool Check(Guid userId, Guid groupId)
+        public bool Check(string userId, Guid groupId)
         {
             using (var db = new FlashcardsDbContext())
             {
-                return db.GroupDbModels.FirstOrDefault(e => e.UserDbModelId == userId && e.Id == groupId) != null;
+                return db.GroupDbModels.FirstOrDefault(e => e.UserId == userId && e.Id == groupId) != null;
             }
         }
     }

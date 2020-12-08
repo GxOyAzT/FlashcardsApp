@@ -9,9 +9,8 @@ namespace Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Guid UserDbModelId { get; set; }
+        public string UserId { get; set; }
 
         public virtual ICollection<FlashcardDbModel> FlashcardDbModels { get; set; }
-        public virtual UserDbModel UserDbModel { get; set; }
     }
 }
