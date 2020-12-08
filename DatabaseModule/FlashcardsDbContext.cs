@@ -17,7 +17,7 @@ namespace DatabaseModule
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("workstation id=FlashcardsDb.mssql.somee.com;packet size=4096;user id=PortfolioDB;pwd=Truskawka1;data source=FlashcardsDb.mssql.somee.com;persist security info=False;initial catalog=FlashcardsDb");
+                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=FlashcardsApp;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             }
         }
 

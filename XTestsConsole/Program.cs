@@ -1,7 +1,5 @@
 ﻿using System;
 using DatabaseModule;
-using DatabaseModuleInterface;
-using Models;
 
 namespace XTestsConsole
 {
@@ -9,32 +7,12 @@ namespace XTestsConsole
     {
         static void Main(string[] args)
         {
+            LoadFiveFlashcardsForLearn loadFiveFlashcardsForLearn = new LoadFiveFlashcardsForLearn();
 
-            FlashcardDbModel flashcardDbModelX1 = new FlashcardDbModel()
-            {
-                Id = Guid.Parse("073e83a0-57ff-43b8-a2c7-56a54b5ab22c"),
-                PracticeDirection = PracticeDirection.FromNativeToForeign,
-                NativeLanguage = "Flashcard 1 Native",
-                ForeignLanguage = "Flashcard 1 Foreign",
-                CorreactAnsInRow = null,
-                NextPracticeDate = null,
-                GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
-            };
-
-            FlashcardDbModel flashcardDbModelY1 = new FlashcardDbModel()
-            {
-                Id = Guid.Parse("073e83a0-57ff-43b8-a2c7-56a54b5ab22c"),
-                PracticeDirection = PracticeDirection.FromForeignToNative,
-                NativeLanguage = "Flashcard 1 Native",
-                ForeignLanguage = "Flashcard 1 Foreign",
-                CorreactAnsInRow = null,
-                NextPracticeDate = null,
-                GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
-            };
+            var items = loadFiveFlashcardsForLearn.Load(Guid.Parse("F34B0017-65E3-4F37-8D1B-4AB096F64046"));
 
             //using (var db = new FlashcardsDbContext())
             //{
-            //    db.FlashcardsDbModels.Add(flashcardDbModelY1);
             //    db.SaveChanges();
             //}
         }

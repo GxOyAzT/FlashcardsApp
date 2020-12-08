@@ -11,7 +11,7 @@ namespace Models
         public string NativeLanguage { get; set; }
         public string ForeignLanguage { get; set; }
         public int? CorreactAnsInRow { get; set; }
-        public DateTime? NextPracticeDate { get; set; }
+        public DateTime NextPracticeDate { get; set; }
         public Guid GroupDbModelId { get; set; }
         
 
