@@ -5,8 +5,8 @@ using System.Text;
 
 namespace DatabaseModuleInterface
 {
-    public interface IUpdateFlashcardPracticeProperties
+    public interface IUpdateFlashcardsListPracticeProperties
     {
-        void Update(FlashcardDbModel flashcardDbModel);
+        void Update(List<FlashcardDbModel> input);
     }
 }
