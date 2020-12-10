@@ -7,6 +7,7 @@ namespace DatabaseModule
     {
         public FlashcardsDbContext()
         {
+
         }
 
         public FlashcardsDbContext(DbContextOptions options) : base(options)
@@ -16,9 +17,7 @@ namespace DatabaseModule
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(DbConnectionString.GetConn());
-            }
+                optionsBuilder.UseSqlServer(DbConnectionString.GetTestConn());
         }
 
         public DbSet<FlashcardDbModel> FlashcardsDbModels { get; set; }

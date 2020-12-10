@@ -2,9 +2,9 @@
 using Models;
 using System.Collections.Generic;
 
-namespace DatabaseModule.FlashcardModels
+namespace DatabaseModule
 {
-    class UpdateFlashcardsListPracticeProperties : IUpdateFlashcardsListPracticeProperties
+    public class UpdateFlashcardsListPracticeProperties : IUpdateFlashcardsListPracticeProperties
     {
         private readonly IUpdateFlashcardPracticeProperties _updateFlashcardPracticeProperties;
 
