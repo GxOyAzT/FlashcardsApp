@@ -6,8 +6,10 @@ using Xunit;
 
 namespace XUnitTests
 {
+    [Collection("Sequential")]
     public class CheckIfUserOwnGroupTests
     {
+
         [Fact]
         public void CheckIfUserOwnGroupTestA()
         {

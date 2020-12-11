@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseModule\DatabaseModule.csproj" />
+    <ProjectReference Include="..\Processor\Processor.csproj" />
     <ProjectReference Include="..\XDatabaseForXUnitTests\XDatabaseForXUnitTests.csproj" />
   </ItemGroup>
 

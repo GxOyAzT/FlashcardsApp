@@ -8,6 +8,7 @@ using Xunit;
 
 namespace XUnitTests
 {
+    [Collection("Sequential")]
     public class UpdateFlashcardsListPracticePropertiesTests
     {
         [Fact]

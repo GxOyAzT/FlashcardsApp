@@ -14,7 +14,20 @@ namespace Models
         public DateTime NextPracticeDate { get; set; }
         public Guid GroupDbModelId { get; set; }
         
-
         public virtual GroupDbModel GroupDbModel { get; set; }
+
+        public FlashcardDbModel CloneFlashcardDbModel()
+        {
+            return new FlashcardDbModel()
+            {
+                Id = Id,
+                PracticeDirection = PracticeDirection,
+                NativeLanguage = NativeLanguage,
+                ForeignLanguage = ForeignLanguage,
+                CorreactAnsInRow = CorreactAnsInRow,
+                NextPracticeDate = NextPracticeDate,
+                GroupDbModelId = GroupDbModelId
+            };
+        }
     }
 }
