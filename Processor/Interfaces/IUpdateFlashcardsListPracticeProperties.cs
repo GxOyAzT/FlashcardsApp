@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DatabaseModuleInterface
+namespace Processor
 {
     public interface IUpdateFlashcardsListPracticeProperties
     {

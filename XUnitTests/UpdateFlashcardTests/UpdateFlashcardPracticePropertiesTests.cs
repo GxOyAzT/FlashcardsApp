@@ -15,7 +15,7 @@ namespace XUnitTests
         [Fact]
         public void UpdateFlashcardPracticePropertiesTestsA()
         {
-            ResetTestDatabase.Reset();
+            ResetTestDatabasev2.Reset();
 
             var flashcard = new FlashcardDbModel()
             {

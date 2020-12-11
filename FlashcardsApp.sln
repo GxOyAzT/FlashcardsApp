@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDatabaseForXUnitTests", "X
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModule", "DatabaseModule\DatabaseModule.csproj", "{33DF7CAE-91D0-4907-BA33-0347AF025B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{E309D15F-22A4-4C58-8EE8-897B45EF62C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{E309D15F-22A4-4C58-8EE8-897B45EF62C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processor", "Processor\Processor.csproj", "{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E309D15F-22A4-4C58-8EE8-897B45EF62C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E309D15F-22A4-4C58-8EE8-897B45EF62C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E309D15F-22A4-4C58-8EE8-897B45EF62C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

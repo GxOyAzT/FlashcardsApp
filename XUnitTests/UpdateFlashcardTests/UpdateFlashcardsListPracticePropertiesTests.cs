@@ -1,9 +1,8 @@
 ﻿using DatabaseModule;
-using DatabaseModuleInterface;
 using Models;
+using Processor;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using XDatabaseForXUnitTests;
 using Xunit;
 
@@ -14,7 +13,7 @@ namespace XUnitTests
         [Fact]
         public void UpdateFlashcardsListPracticePropertiesTestsB()
         {
-            ResetTestDatabase.Reset();
+            ResetTestDatabasev2.Reset();
 
             var flashcard = new FlashcardDbModel()
             {

@@ -2,7 +2,7 @@
 using Models;
 using System.Collections.Generic;
 
-namespace DatabaseModule
+namespace Processor
 {
     public class UpdateFlashcardsListPracticeProperties : IUpdateFlashcardsListPracticeProperties
     {
