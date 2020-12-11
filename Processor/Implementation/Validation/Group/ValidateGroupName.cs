@@ -14,10 +14,7 @@ namespace Processor
 
         List<string> ErrorMessages { get; set; }
 
-        public List<string> GetErrorMessages()
-        {
-            return ErrorMessages;
-        }
+        public List<string> GetErrorMessages() => ErrorMessages;
 
         public bool Validate(string groupName)
         {

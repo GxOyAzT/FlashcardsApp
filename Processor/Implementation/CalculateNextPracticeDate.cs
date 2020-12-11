@@ -21,6 +21,8 @@ namespace Processor
             else if (correctAnsInRow == 7) 
                 return DateTime.Now.Date.AddDays(90);
             else if (correctAnsInRow == 8) 
+                return DateTime.Now.Date.AddDays(183);
+            else if (correctAnsInRow > 8)
                 return DateTime.Now.Date.AddDays(365);
 
             return DateTime.Now.Date;

@@ -65,5 +65,27 @@ namespace XUnitTests
 
             Assert.False(_processor.Validate(input));
         }
+
+        [Fact]
+        public void ValidateGroupNameTestG()
+        {
+            string input = "Abbd Asdfa ";
+
+            IValidateGroupName _processor = new ValidateGroupName();
+
+            Assert.False(_processor.Validate(input));
+            Assert.NotEmpty(_processor.GetErrorMessages());
+        }
+
+        [Fact]
+        public void ValidateGroupNameTestH()
+        {
+            string input = "Abb";
+
+            IValidateGroupName _processor = new ValidateGroupName();
+
+            Assert.True(_processor.Validate(input));
+            Assert.Empty(_processor.GetErrorMessages());
+        }
     }
 }
