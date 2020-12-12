@@ -1,6 +1,5 @@
 ﻿using DatabaseModule;
 using DatabaseModuleInterface;
-using XDatabaseForXUnitTests;
 using Xunit;
 
 namespace XUnitTests

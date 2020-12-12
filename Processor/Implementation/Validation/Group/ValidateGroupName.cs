@@ -16,6 +16,11 @@ namespace Processor
 
         public List<string> GetErrorMessages() => ErrorMessages;
 
+        public void Reset()
+        {
+            ErrorMessages = new List<string>();
+        }
+
         public bool Validate(string groupName)
         {
             if (groupName == null)

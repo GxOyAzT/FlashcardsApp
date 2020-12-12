@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Processor\Processor.csproj" />
-    <ProjectReference Include="..\XDatabaseForXUnitTests\XDatabaseForXUnitTests.csproj" />
   </ItemGroup>
 
 </Project>

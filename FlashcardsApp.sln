@@ -9,13 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModuleInterface", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XTestsConsole", "XTestsConsole\XTestsConsole.csproj", "{6F43517F-E644-4F21-9AC5-EEE37FF01A8C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XDatabaseForXUnitTests", "XDatabaseForXUnitTests\XDatabaseForXUnitTests.csproj", "{9F3D28BA-FD05-4EC5-85B3-C9CA5A3D29EE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModule", "DatabaseModule\DatabaseModule.csproj", "{33DF7CAE-91D0-4907-BA33-0347AF025B1E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTests", "XUnitTests\XUnitTests.csproj", "{E309D15F-22A4-4C58-8EE8-897B45EF62C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processor", "Processor\Processor.csproj", "{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Processor", "Processor\Processor.csproj", "{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{6F43517F-E644-4F21-9AC5-EEE37FF01A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F43517F-E644-4F21-9AC5-EEE37FF01A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F43517F-E644-4F21-9AC5-EEE37FF01A8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F3D28BA-FD05-4EC5-85B3-C9CA5A3D29EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F3D28BA-FD05-4EC5-85B3-C9CA5A3D29EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F3D28BA-FD05-4EC5-85B3-C9CA5A3D29EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F3D28BA-FD05-4EC5-85B3-C9CA5A3D29EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33DF7CAE-91D0-4907-BA33-0347AF025B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33DF7CAE-91D0-4907-BA33-0347AF025B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33DF7CAE-91D0-4907-BA33-0347AF025B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU

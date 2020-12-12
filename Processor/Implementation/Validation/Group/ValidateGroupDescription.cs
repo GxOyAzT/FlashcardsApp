@@ -41,5 +41,10 @@ namespace Processor
 
             return !ErrorMessages.Any();
         }
+
+        public void Reset()
+        {
+            ErrorMessages = new List<string>();
+        }
     }
 }

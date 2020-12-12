@@ -3,7 +3,6 @@ using Models;
 using Processor;
 using System;
 using System.Collections.Generic;
-using XDatabaseForXUnitTests;
 using Xunit;
 
 namespace XUnitTests

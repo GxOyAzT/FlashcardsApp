@@ -8,5 +8,6 @@ namespace Processor
     {
         List<string> GetErrorMessages();
         bool Validate(string groupName);
+        void Reset();
     }
 }

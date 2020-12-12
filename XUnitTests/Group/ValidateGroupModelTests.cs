@@ -60,10 +60,8 @@ namespace XUnitTests
                 new ValidateGroupName(),
                 new ValidateGroupDescription());
 
-            _processor.Validate(groupName, description);
-            
-
-            Assert.Throws<Exception>(() => _processor.Validate("Abc", ""));
+            Assert.False(_processor.Validate(groupName, description));
+            Assert.True(_processor.Validate("Abdf", "Ahdeofhw akfwef."));
         }
     }
 }

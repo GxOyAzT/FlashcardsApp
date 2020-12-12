@@ -26,7 +26,7 @@ namespace Processor
         public bool Validate(string groupName, string groupDescription)
         {
             if (WasAlreadyUsed)
-                throw new Exception("Error. One instation of ValidateGroupModel was used twice.");
+                Reset();
 
             WasAlreadyUsed = true;
 
@@ -37,6 +37,14 @@ namespace Processor
                 ErrorMessages.AddRange(_validateGroupDescription.GetErrorMessages());
 
             return !ErrorMessages.Any();
+        }
+
+        public void Reset()
+        {
+            _validateGroupDescription.Reset();
+            _validateGroupName.Reset();
+            WasAlreadyUsed = false;
+            ErrorMessages = new List<string>();
         }
     }
 }
