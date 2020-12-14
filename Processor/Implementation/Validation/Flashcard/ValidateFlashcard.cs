@@ -20,7 +20,7 @@ namespace Processor
         public bool Validate(string foreign, string native)
         {
             if (WasAlreadyUsed)
-                throw new Exception("Error. One instation of ValidateFlashcard was used twice.");
+                Reset();
 
             WasAlreadyUsed = true;
 
@@ -46,6 +46,12 @@ namespace Processor
 
             if (word[0] == ' ' || word[^1] == ' ')
                 ErrorMessages.Add($"{foreignOrNative} contain spaces on the beginning or end.");
+        }
+
+        void Reset()
+        {
+            WasAlreadyUsed = false;
+            ErrorMessages = new List<string>();
         }
     }
 }

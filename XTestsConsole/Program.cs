@@ -1,9 +1,5 @@
 ﻿using System;
-using DatabaseModule;
-using DatabaseModuleInterface;
-using Models;
 using Processor;
-using XDatabaseForXUnitTests;
 
 namespace XTestsConsole
 {

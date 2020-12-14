@@ -162,7 +162,7 @@ namespace XUnitTests
                 ForeignLanguage = "Flashcard 6 Foreign",
                 CorreactAnsInRow = 2,
                 NextPracticeDate = new DateTime(2020, 10, 7),
-                GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
+                GroupDbModelId = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72")
             });
 
             FlashcardDbModels.Add(new FlashcardDbModel()
@@ -173,7 +173,7 @@ namespace XUnitTests
                 ForeignLanguage = "Flashcard 6 Foreign",
                 CorreactAnsInRow = 5,
                 NextPracticeDate = new DateTime(2021, 5, 7),
-                GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
+                GroupDbModelId = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72")
             });
         }
 

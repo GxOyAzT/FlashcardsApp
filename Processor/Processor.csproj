@@ -8,9 +8,4 @@
     <ProjectReference Include="..\DatabaseModule\DatabaseModule.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Implementation\Flashcard\" />
-    <Folder Include="Interfaces\Flashcard\" />
-  </ItemGroup>
-
 </Project>
