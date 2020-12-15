@@ -1,16 +1,17 @@
 ﻿using DatabaseModule;
+using DatabaseModuleInterface;
 using System;
 using System.Linq;
 
-namespace Processor
+namespace DatabaseModule
 {
-    public class CheckIfGroupIdIsUnique : ICheckIfGroupIdIsUnique
+    public class CheckIfFlashcardIdIsUnique : ICheckIfFlashcardIdIsUnique
     {
         public bool Check(Guid id)
         {
             using (var db = new FlashcardsDbContext())
             {
-                return !db.GroupDbModels.Where(e => e.Id == id).Any();
+                return !db.FlashcardsDbModels.Where(e => e.Id == id).Any();
             }
         }
     }

@@ -20,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseModulePostgreSQL\DatabaseModulePostgreSQL.csproj" />
+    <ProjectReference Include="..\DatabaseModule\DatabaseModule.csproj" />
     <ProjectReference Include="..\Processor\Processor.csproj" />
   </ItemGroup>
 

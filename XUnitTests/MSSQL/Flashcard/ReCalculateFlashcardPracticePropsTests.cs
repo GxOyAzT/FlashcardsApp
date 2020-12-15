@@ -1,11 +1,9 @@
 ﻿using Models;
 using Processor;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
-namespace XUnitTests
+namespace XUnitTests.MSSQL
 {
     [Collection("Sequential")]
     public class ReCalculateFlashcardPracticePropsTests

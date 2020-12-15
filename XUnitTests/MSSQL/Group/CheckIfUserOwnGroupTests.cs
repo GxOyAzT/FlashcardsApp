@@ -3,7 +3,7 @@ using DatabaseModuleInterface;
 using System;
 using Xunit;
 
-namespace XUnitTests
+namespace XUnitTests.MSSQL
 {
     [Collection("Sequential")]
     public class CheckIfUserOwnGroupTests

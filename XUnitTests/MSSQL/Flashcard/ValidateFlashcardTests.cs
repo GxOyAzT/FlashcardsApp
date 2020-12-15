@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace XUnitTests
+namespace XUnitTests.MSSQL
 {
     public class ValidateFlashcardTests
     {

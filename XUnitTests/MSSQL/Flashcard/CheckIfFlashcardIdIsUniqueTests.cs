@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
-using Processor;
+using DatabaseModuleInterface;
+using DatabaseModule;
 
-namespace XUnitTests
+namespace XUnitTests.MSSQL
 {
     [Collection("Sequential")]
     public class CheckIfFlashcardIdIsUniqueTests

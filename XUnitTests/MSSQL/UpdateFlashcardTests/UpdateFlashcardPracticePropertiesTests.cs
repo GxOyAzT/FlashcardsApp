@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace XUnitTests
+namespace XUnitTests.MSSQL
 {
     [Collection("Sequential")]
     public class UpdateFlashcardPracticePropertiesTests

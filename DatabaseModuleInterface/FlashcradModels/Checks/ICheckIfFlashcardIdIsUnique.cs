@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Processor
+namespace DatabaseModuleInterface
 {
     public interface ICheckIfFlashcardIdIsUnique
     {

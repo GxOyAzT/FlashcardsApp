@@ -1,8 +1,8 @@
-﻿using DatabaseModule;
+﻿using DatabaseModuleInterface;
 using System;
 using System.Linq;
 
-namespace Processor
+namespace DatabaseModule
 {
     public class CheckIfFlashcardIsUnique : ICheckIfFlashcardIsUnique
     {
