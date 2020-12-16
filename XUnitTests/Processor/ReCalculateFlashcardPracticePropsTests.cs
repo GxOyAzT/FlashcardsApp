@@ -3,7 +3,7 @@ using Processor;
 using System;
 using Xunit;
 
-namespace XUnitTests.MSSQL
+namespace XUnitTests.Processor
 {
     [Collection("Sequential")]
     public class ReCalculateFlashcardPracticePropsTests

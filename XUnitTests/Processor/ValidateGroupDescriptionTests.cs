@@ -1,7 +1,7 @@
 ﻿using Processor;
 using Xunit;
 
-namespace XUnitTests.MSSQL
+namespace XUnitTests.Processor
 {
     [Collection("Sequential")]
     public class ValidateGroupDescriptionTests

@@ -2,7 +2,7 @@
 using System;
 using Xunit;
 
-namespace XUnitTests.MSSQL
+namespace XUnitTests.Processor
 {
     public class ValidateGroupModelTests
     {

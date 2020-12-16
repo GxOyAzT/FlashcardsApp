@@ -15,7 +15,7 @@ namespace XUnitTests.MSSQL
         {
             ResetTestDatabasev2.Reset();
 
-            ICheckIfFlashcardIdIsUnique _processor = new CheckIfFlashcardIdIsUnique();
+            CheckIfFlashcardIdIsUnique _processor = new CheckIfFlashcardIdIsUnique();
 
             Assert.Equal(expected, _processor.Check(Guid.Parse(stringId)));
         }

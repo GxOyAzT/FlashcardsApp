@@ -1,13 +1,13 @@
 ﻿using DatabaseModuleInterface;
 using Models;
 
-namespace DatabaseModule
+namespace DatabaseModulePostgreSQL
 {
-    public class InsertNewGroup : IInsertNewGroup
+    public class InsertNewGroupPostgreSQL : IInsertNewGroup
     {
         public void Insert(GroupDbModel groupDbModel)
         {
-            using (var db = new FlashcardsDbContext())
+            using (var db = new FlashcardDbContextPostgreSQL())
             {
                 db.GroupDbModels.Add(groupDbModel);
                 db.SaveChanges();
