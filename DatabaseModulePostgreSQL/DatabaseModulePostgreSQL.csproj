@@ -12,8 +12,4 @@
     <ProjectReference Include="..\DatabaseModuleInterface\DatabaseModuleInterface.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="GroupModels\" />
-  </ItemGroup>
-
 </Project>
