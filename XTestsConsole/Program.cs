@@ -1,5 +1,6 @@
 ﻿using System;
 using Processor;
+using XUnitTests;
 
 namespace XTestsConsole
 {
@@ -7,7 +8,7 @@ namespace XTestsConsole
     {
         static void Main(string[] args)
         {
-            
+            ResetTestDatabasev4.Reset();
         }
     }
 }
