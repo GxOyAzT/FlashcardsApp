@@ -1,0 +1,452 @@
+﻿#CreateNewGroupButton {
+  position: absolute;
+  display: inline;
+  top: 15px;
+  right: 15px;
+  height: 60px;
+  width: 180px;
+  background: #336ba7;
+  border-radius: 15px;
+}
+
+#CreateNewGroupButton > img {
+  position: relative;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  float: left;
+  left: 10px;
+  background: transparent;
+}
+
+#CreateNewGroupButton > p {
+  display: inline;
+  float: left;
+  background: transparent;
+  font-size: 30px;
+  color: #fff;
+  position: relative;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+#CreateNewGroupButton:hover {
+  background: #4a8bd1;
+}
+
+#CreateNewGroupButton:active {
+  border-color: #fff;
+}
+
+#CreateNewGroupPanel {
+  display: none;
+  position: absolute;
+  background: #4a8bd1;
+  height: 400px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  border-radius: 15px;
+}
+
+#CNGPName {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 35px;
+  font-size: 25px;
+  border: none;
+  border-bottom: white solid 1px;
+  color: white;
+  background: transparent;
+  text-align: left;
+}
+
+#CNGPName:hover {
+}
+
+#CNGPName:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: wheat;
+}
+
+#CNGPDescription {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 200px;
+  font-size: 25px;
+  border: none;
+  border: white solid 1px;
+  color: white;
+  background: transparent;
+}
+
+#CNGPDescription:focus {
+  outline: none;
+}
+
+#CNGPConfirm {
+  display: inline;
+  position: absolute;
+  background: #1b7029;
+  height: 40px;
+  width: 150px;
+  bottom: 30px;
+  left: 90px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#CNGPConfirm:hover {
+  background: #218f33;
+}
+
+#CNGPConfirm:active {
+}
+
+#CNGPConfirm > img {
+  position: absolute;
+  height: 30px;
+  background: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+#CNGPConfirm > p {
+  color: white;
+  position: absolute;
+  background: transparent;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+
+#CNGPDiscard {
+  display: inline;
+  position: absolute;
+  background: #761212;
+  height: 40px;
+  width: 150px;
+  bottom: 30px;
+  right: 90px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#CNGPDiscard:hover {
+  background: #a81818;
+}
+
+#CNGPDiscard > img {
+  position: absolute;
+  height: 30px;
+  background: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+#CNGPDiscard > p {
+  color: white;
+  position: absolute;
+  background: transparent;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+
+#GroupsWrapper {
+  color: white;
+  position: relative;
+  width: auto;
+  top: 110px;
+  margin: auto;
+  height: auto;
+  background: transparent;
+}
+
+.GroupFolder {
+  position: relative;
+  height: 320px;
+  width: 370px;
+  background: #b69e19;
+  border-radius: 10px;
+  float: left;
+  margin: 15px;
+}
+
+.GroupFolder > h1 {
+  top: 5px;
+  position: relative;
+  background: transparent;
+  margin: auto;
+  text-align: center;
+}
+
+.GroupFolder > p {
+  background: transparent;
+  margin: 20px 4px 0px 4px;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.GFButtonsWrapper {
+  background: transparent;
+  position: absolute;
+  display: block;
+  width: 190px;
+  height: 50px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.BFBWDelete {
+  float: left;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin: auto;
+  background: #761212;
+  border-radius: 10px;
+}
+
+.BFBWDetails {
+  float: left;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin: auto;
+  background: #07518f;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.BFBWPractice {
+  float: left;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  margin: auto;
+  background: #761212;
+  border-radius: 10px;
+}
+
+.BFBWDelete > img,
+.BFBWDetails > img,
+.BFBWPractice > img {
+  position: absolute;
+  background: transparent;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#GroupDeleteConfirmationPanel {
+  display: none;
+  position: absolute;
+  height: 200px;
+  width: 450px;
+  background: #2e2d2d;
+  color: white;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  z-index: 1001;
+}
+
+#GroupDeleteConfirmationPanel > img {
+  position: absolute;
+  transform: translateY(-70%);
+  top: 50%;
+}
+
+#GroupDeleteConfirmationPanel > p {
+  position: relative;
+  background: transparent;
+  font-size: 20px;
+  margin-left: 120px;
+  margin-right: 20px;
+  top: 50%;
+  transform: translateY(-70%);
+}
+
+.WarningImage {
+  background: transparent;
+}
+
+.GDCPButtons {
+  position: absolute;
+  bottom: 10px;
+  background: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+}
+
+.GDCPBYes {
+  float: left;
+  display: block;
+  height: 50px;
+  width: 80px;
+  background: green;
+  border-radius: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.GDCPBYes > p {
+  position: relative;
+  background: transparent;
+  display: block;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+
+.GDCPBNo {
+  float: left;
+  display: block;
+  height: 50px;
+  width: 80px;
+  background: red;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.GDCPBNo > p {
+  position: relative;
+  background: transparent;
+  display: block;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+}
+
+.GDCPBNo:hover,
+.GDCPBYes:hover {
+  cursor: pointer;
+}
+
+.GDCPBNo:hover {
+  background: rgb(253, 57, 57);
+}
+
+.GDCPBYes:hover {
+  background: rgb(5, 155, 5);
+}
+
+@media only screen and (max-width: 500px) {
+  #CreateNewGroupPanel {
+    top: 10px;
+    width: 90%;
+    transform: translate(-50%, 0px);
+  }
+
+  #CNGPConfirm > img {
+    display: none;
+  }
+
+  #CNGPDiscard > img {
+    display: none;
+  }
+
+  #CNGPConfirm {
+    position: absolute;
+    bottom: 30px;
+    width: 120px;
+    left: 50%;
+    transform: translateX(-102%);
+  }
+
+  #CNGPDiscard {
+    position: absolute;
+    bottom: 30px;
+    width: 120px;
+    left: 50%;
+    transform: translateX(2%);
+  }
+
+  #CreateNewGroupButton {
+    height: 50px;
+    width: 130px;
+  }
+
+  #CreateNewGroupButton > img {
+    height: 40px;
+  }
+
+  #CreateNewGroupButton > p {
+    font-size: 25px;
+  }
+
+  #CNGPName {
+    width: 94%;
+  }
+
+  #CNGPDescription {
+    width: 94%;
+  }
+
+  #GroupsWrapper {
+    width: 98%;
+  }
+
+  .GroupFolder {
+    margin: 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  #GroupWrapper {
+    width: 96%;
+  }
+
+  .GFButtonsWrapper {
+    display: block;
+    position: relative;
+    bottom: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #GroupDeleteConfirmationPanel {
+    width: 100%;
+  }
+
+  .WarningImage {
+    display: none;
+  }
+
+  #GroupDeleteConfirmationPanel > p {
+    margin-left: 20px;
+  }
+
+  .GDCPButtons {
+    min-width: 180px;
+  }
+}

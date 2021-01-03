@@ -1,0 +1,74 @@
+﻿@model List<GroupDbModel> 
+
+<div id="Shader"></div>
+
+<div id="MainFrame">
+    <div id="CreateNewGroupButton" onclick="ShowCreateNewGroupPanel()">
+        <img src="/images/plus-icon.png" />
+        <p>New</p>
+    </div>
+    <div id="GroupsWrapper">
+        @foreach (var group in Model)
+        {
+            <div class="GroupFolder">
+                <input hidden value="GUDI-1" />
+                <h1>@group.Name</h1>
+                <p>@group.Description</p>
+                <div class="GFButtonsWrapper">
+                    <div class="BFBWDelete" onclick="DeleteGroupWarningMessageShow('@(group.Id.ToString())')">
+                        <img src="/images/delete-icon.png" />
+                    </div>
+                    <a href="#" class="BFBWDetails">
+                        <img src="/images/modify-icon.png" />
+                    </a>
+                    <a href="#" class="BFBWPractice">
+                        <img src="/images/delete-icon.png" />
+                    </a>
+                </div>
+            </div>
+        }
+        @*<div class="GroupFolder">
+            <input hidden value="GUDI-1" />
+            <h1>Group - name1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis incidunt at tenetur nihil nostrum ea nam praesentium modi magni, odio temporibus nisi, aliquam fugiat corrupti in voluptatem totam fugit ex eveniet vero doloribus.</p>
+            <div class="GFButtonsWrapper">
+                <div class="BFBWDelete" onclick="DeleteGroupWarningMessageShow()">
+                    <img src="/images/delete-icon.png" />
+                </div>
+                <a href="#" class="BFBWDetails">
+                    <img src="/images/modify-icon.png" />
+                </a>
+                <a href="#" class="BFBWPractice">
+                    <img src="/images/delete-icon.png" />
+                </a>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+<form id="CreateNewGroupPanel">
+    <input id="CNGPName" placeholder="Name" maxlength="30" type="text" />
+    <textarea id="CNGPDescription" placeholder="Description (optional)" maxlength="150" type="text"></textarea>
+    <a id="CNGPConfirm" asp-action="" type="submit">
+        <img src="/images/plus-icon.png" />
+        <p>Create</p>
+    </a>
+    <div id="CNGPDiscard" onclick="HideCreateNewGroupPanel()">
+        <img src="/images/discard-icon.png" />
+        <p>Discard</p>
+    </div>
+</form>
+
+<div id="GroupDeleteConfirmationPanel">
+    <img class="WarningImage" src="images/warning-icon-big.png" />
+    <p>Are you sure you want to delete this group? This means all flashcards in this group will be deleted.</p>
+    <div class="GDCPButtons">
+        <form>
+            <input hidden id="DeleteGroupId"/>
+            <input class="GDCPBYes" type="submit" asp-action="DeleteGroup"/>
+            <div class="GDCPBNo" onclick="DeleteGroupWarningMessageHide()"><p>No</p></div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/GroupListScript.js"></script>

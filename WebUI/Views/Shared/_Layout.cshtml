@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/Main.css" />
     <link rel="stylesheet" href="/css/LoginRegisterStyle.css" />
+    <link rel="stylesheet" href="~/css/GroupListStyle.css" />
     <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300&display=swap" rel="stylesheet">
     <title>Flashcards</title>
 </head>
@@ -15,27 +16,28 @@
     }
     else
     {
+        <div class="Background"></div>
+
         <div id="IconContainer" onclick="HideOrShowNavigationBar()">
         </div>
 
         <div id="NavigationBar">
             <div class="NBButton">
-                <a class="NBBLink" href="groups.html"><img class="NBBLImage" src="/images/folder-icon.png"></a>
+                <a class="NBBLink" asp-controller="Manage" asp-action="GroupsList"><img class="NBBLImage" src="/images/folder-icon.png"></a>
                 <div class="NBButtonClue">
                     <p>Flashcard Groups</p>
                 </div>
             </div>
             <div class="NBButton">
-                <a class="NBBLink" href="#"><img class="NBBLImage" src="/images/logout-icon.png"></a>
+                <a class="NBBLink" asp-controller="Home" asp-action="LogOut"><img class="NBBLImage" src="/images/logout-icon.png"></a>
                 <div class="NBButtonClue">
                     <p>Log out</p>
                 </div>
             </div>
         </div>
 
-        <div id="MainFrame">
-            @RenderBody()
-        </div>
+        @RenderBody()
     }
+    <script src="~/js/Main.js"></script>
 </body>
 </html>

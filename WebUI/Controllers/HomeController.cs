@@ -8,10 +8,12 @@ namespace WebAppAuth.Controllers
     public class HomeController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public HomeController(UserManager<IdentityUser> userManager)
+        public HomeController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public IActionResult Index()
@@ -26,9 +28,25 @@ namespace WebAppAuth.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password)
+        public async Task<IActionResult> Login(string email, string password)
         {
-            return View();
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null)
+            {
+                return RedirectToAction("LoginRegister",
+                    new { errorMessages = new List<string>() { "This e-mail does not exists." } });
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user, password, false, false);
+
+            if (!result.Succeeded)
+            {
+                return RedirectToAction("LoginRegister",
+                    new { errorMessages = new List<string>() { "Incorrect password." } });
+            }
+
+            return RedirectToAction("Index", "Manage");
         }
 
         [HttpPost]
@@ -76,7 +94,14 @@ namespace WebAppAuth.Controllers
             }
 
             return RedirectToAction("LoginRegister",
-                    new { errorMessages = "Account created successfully. Confirm e-mail and log in." });
+                    new { errorMessages = "Account created successfully." });
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("LoginRegister",
+                    new { errorMessages = "Successfully logged out." });
         }
     }
 }

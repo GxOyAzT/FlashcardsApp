@@ -8,7 +8,7 @@ namespace XTestsConsole
     {
         static void Main(string[] args)
         {
-            ResetTestDatabasev4.Reset();
+            ResetTestDatabasev5.Reset();
         }
     }
 }
