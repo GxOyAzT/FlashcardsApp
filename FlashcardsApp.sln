@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTests", "XUnitTests\XU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Processor", "Processor\Processor.csproj", "{AA2FB308-3F05-4C31-A3F7-337CE259DCF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseModulePostgreSQL", "DatabaseModulePostgreSQL\DatabaseModulePostgreSQL.csproj", "{48073FDE-930D-4205-88D7-0255034EA5DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModulePostgreSQL", "DatabaseModulePostgreSQL\DatabaseModulePostgreSQL.csproj", "{48073FDE-930D-4205-88D7-0255034EA5DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{09F742EA-233D-442A-ADA2-CE606063F009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{48073FDE-930D-4205-88D7-0255034EA5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48073FDE-930D-4205-88D7-0255034EA5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48073FDE-930D-4205-88D7-0255034EA5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F742EA-233D-442A-ADA2-CE606063F009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F742EA-233D-442A-ADA2-CE606063F009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F742EA-233D-442A-ADA2-CE606063F009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F742EA-233D-442A-ADA2-CE606063F009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
