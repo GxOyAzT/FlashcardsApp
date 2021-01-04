@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace WebUI.Controllers
@@ -10,11 +11,13 @@ namespace WebUI.Controllers
     {
         private readonly ILoadAllUserGroups _loadAllUserGroups;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly IDeleteGroup _deleteGroup;
 
-        public ManageController(ILoadAllUserGroups loadAllUserGroups, UserManager<IdentityUser> userManager)
+        public ManageController(ILoadAllUserGroups loadAllUserGroups, UserManager<IdentityUser> userManager, IDeleteGroup deleteGroup)
         {
             _loadAllUserGroups = loadAllUserGroups;
-            this._userManager = userManager;
+            _userManager = userManager;
+            _deleteGroup = deleteGroup;
         }
 
         public IActionResult Index()
@@ -31,7 +34,8 @@ namespace WebUI.Controllers
 
         public IActionResult DeleteGroup(string flashcardId)
         {
-            return View();
+            _deleteGroup.Delete(Guid.Parse(flashcardId));
+            return RedirectToAction("GroupsList");
         }
     }
 }

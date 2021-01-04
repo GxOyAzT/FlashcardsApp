@@ -70,6 +70,12 @@ namespace WebAppAuth.Controllers
                     new { errorMessages = new List<string>() { "This e-mail already exists." } });
             }
 
+            if (await _userManager.FindByNameAsync(userName) != null)
+            {
+                return RedirectToAction("LoginRegister",
+                    new { errorMessages = new List<string>() { "This user name already exists." } });
+            }
+
             var passwordValidator = new PasswordValidator<IdentityUser>();
             var passwordValidateResult = await passwordValidator.ValidateAsync(_userManager, null, password);
 

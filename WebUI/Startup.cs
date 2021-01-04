@@ -1,5 +1,3 @@
-using DatabaseModule;
-using DatabaseModuleInterface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -35,7 +33,7 @@ namespace WebUI
 
             services.AddRazorPages();
 
-            services.AddScoped<ILoadAllUserGroups, LoadAllUserGroups>();
+            DependencyContainer.MapDependencies(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
