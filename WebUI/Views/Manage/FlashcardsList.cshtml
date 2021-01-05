@@ -43,10 +43,10 @@
     <form method="post">
         <input name="groupId" hidden value="@(Model.GroupId)" />
         <input name="modifyFlashcardId" hidden type="text" id="FlashcardIdModify" />
-        <input maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignModifyId" type="text" placeholder="foreign" />
-        <input maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeModifyId" type="text"
+        <input name="foreign" maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignModifyId" type="text" placeholder="foreign" />
+        <input name="native" maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeModifyId" type="text"
                placeholder="native" />
-        <input type="submit" id="CNFPConfirm" value="Modify" />
+        <input type="submit" id="CNFPConfirm" value="Modify" asp-action="ModifyFlashcard"/>
         <div id="CNFPDiscard" onclick="HideModifyFlashcardPanel()">
             <img src="/images/discard-icon.png" />
             <p>Discard</p>

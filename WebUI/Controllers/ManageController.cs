@@ -89,5 +89,10 @@ namespace WebUI.Controllers
 
             return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = new List<string>() });
         }
+
+        public IActionResult ModifyFlashcard(string modifyFlashcardId, string native, string foreign, string groupId)
+        {
+
+        }
     }
 }

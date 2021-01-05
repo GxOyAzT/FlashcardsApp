@@ -24,6 +24,8 @@ namespace WebUI
             services.AddScoped<ICheckIfFlashcardIsUnique, CheckIfFlashcardIsUnique>();
             services.AddScoped<IInsertNewFlashcard, InsertNewFlashcard>();
             services.AddScoped<IValidateFlashcard, ValidateFlashcard>();
+            services.AddScoped<IUpdateFlashcardWords, UpdateFlashcardWords>();
+            services.AddScoped<IUpdateFlashcard, UpdateFlashcard>();
         }
     }
 }
