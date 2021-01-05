@@ -1,0 +1,301 @@
+﻿#CreateNewFlashcardButton {
+    position: absolute;
+    display: inline;
+    top: 15px;
+    right: 15px;
+    height: 60px;
+    width: 180px;
+    background: #336ba7;
+    border-radius: 15px;
+}
+
+#CreateNewFlashcardButton:hover {
+    background: #4084ce;
+}
+
+#CreateNewFlashcardButton > img {
+    position: relative;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    left: 10px;
+    background: transparent;
+}
+
+#CreateNewFlashcardButton > p {
+    display: inline;
+    float: left;
+    background: transparent;
+    font-size: 30px;
+    color: #fff;
+    position: relative;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.FlashcardList {
+    top: 100px;
+    position: relative;
+    float: left;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+}
+
+.FlashcardListItem {
+    position: relative;
+    margin-top: 20px;
+    height: 80px;
+    background: #958c11;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.FLINative {
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    background: transparent;
+    top: 15%;
+    margin-left: 25px;
+    width: calc(100% - 170px);
+    max-height: 35px;
+}
+
+.FLIForeign {
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    background: transparent;
+    bottom: 15%;
+    margin-left: 25px;
+    width: calc(100% - 170px);
+    max-height: 35px;
+}
+
+.FLIButtonsContainer {
+    position: absolute;
+    right: 20px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+}
+
+.FLIBCModify {
+    float: left;
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.FLIBCModify:hover > img {
+    background: rgb(77, 77, 255);
+}
+
+.FLIBCModify > img {
+    position: absolute;
+    background: rgb(63, 63, 218);
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.FLIBCDelete {
+    float: left;
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.FLIBCDelete:hover > img {
+    background: rgb(255, 67, 67);
+}
+
+.FLIBCDelete > img {
+    position: absolute;
+    background: red;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.CreateNewFlashcard {
+    display: none;
+    position: absolute;
+    background: #4a8bd1;
+    height: 400px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    border-radius: 15px;
+}
+
+#CNFPConfirm {
+    display: inline;
+    position: absolute;
+    background: #1b7029;
+    height: 40px;
+    width: 150px;
+    bottom: 30px;
+    left: 90px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+#CNGPConfirm:hover {
+    background: #2ba13f;
+}
+
+#CNGPConfirm:active {
+}
+
+#CNFPDiscard {
+    display: inline;
+    position: absolute;
+    background: #761212;
+    height: 40px;
+    width: 150px;
+    bottom: 30px;
+    right: 90px;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#CNFPDiscard:hover {
+    background: #a81818;
+}
+
+#CNFPDiscard > img {
+    position: absolute;
+    height: 30px;
+    background: transparent;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+#CNFPDiscard > p {
+    color: white;
+    position: absolute;
+    background: transparent;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+.CNFFlashcardWorldInput {
+    float: left;
+    display: inline;
+    position: absolute;
+    background: transparent;
+    top: 50px;
+    left: 50px;
+    width: 400px;
+    border: none;
+    font-size: 25px;
+    border-bottom: white solid 2px;
+    color: white;
+}
+
+.CNFFlashcardWorldInput::placeholder {
+    color: white;
+}
+
+.CNFFlashcardWorldInput:focus {
+    outline: none;
+}
+
+.ModifyFlashcardPanel {
+    display: none;
+    position: absolute;
+    background: #4a8bd1;
+    height: 400px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    border-radius: 15px;
+}
+
+@media only screen and (max-width: 500px) {
+    .CreateNewFlashcard {
+        width: 98%;
+        height: 250px;
+    }
+
+    .CNFFlashcardWorldInput {
+        left: 0;
+        width: 100%;
+        margin: 5px;
+    }
+
+    #CNFPConfirm {
+        font-size: 15px;
+        width: 100px;
+        height: 30px;
+        left: 50%;
+        transform: translateX(-120%);
+    }
+
+    #CNFPDiscard {
+        width: 100px;
+        height: 30px;
+        right: 50%;
+        transform: translateX(120%);
+    }
+
+    #CNFPDiscard > p {
+        font-size: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+    }
+
+    #CNFPDiscard > img {
+        display: none;
+    }
+
+    .FLINative,
+    .FLIForeign {
+        margin-left: 2px;
+        width: calc(100% - 130px);
+    }
+
+    .ModifyFlashcardPanel {
+        width: 98%;
+        height: 250px;
+    }
+
+    .FlashcardList {
+        width: 98%;
+        margin: auto;
+    }
+
+    .FLIButtonsContainer {
+        right: 2px;
+    }
+}

@@ -18,7 +18,7 @@
                     <div class="BFBWDelete" onclick="DeleteGroupWarningMessageShow('@(group.Id.ToString())')">
                         <img src="/images/delete-icon.png" />
                     </div>
-                    <a href="#" class="BFBWDetails">
+                    <a class="BFBWDetails" asp-action="FlashcardsList" asp-route-groupId="@(group.Id.ToString())">
                         <img src="/images/modify-icon.png" />
                     </a>
                     <a href="#" class="BFBWPractice">

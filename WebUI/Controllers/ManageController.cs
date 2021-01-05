@@ -18,14 +18,22 @@ namespace WebUI.Controllers
         private readonly IDeleteGroup _deleteGroup;
         private readonly ICreateNewGroup _createNewGroup;
         private readonly ICheckIfUserOwnGroup _checkIfUserOwnGroup;
+        private readonly ILoadFlashcardsWhereGroupId _loadFlashcardsWhereGroupId;
 
-        public ManageController(UserManager<IdentityUser> userManager, ILoadAllUserGroups loadAllUserGroups, IDeleteGroup deleteGroup, ICreateNewGroup createNewGroup, ICheckIfUserOwnGroup checkIfUserOwnGroup)
+        public ManageController(
+            UserManager<IdentityUser> userManager, 
+            ILoadAllUserGroups loadAllUserGroups, 
+            IDeleteGroup deleteGroup,
+            ICreateNewGroup createNewGroup, 
+            ICheckIfUserOwnGroup checkIfUserOwnGroup,
+            ILoadFlashcardsWhereGroupId loadFlashcardsWhereGroupId)
         {
             _loadAllUserGroups = loadAllUserGroups;
             _userManager = userManager;
             _deleteGroup = deleteGroup;
             _createNewGroup = createNewGroup;
             _checkIfUserOwnGroup = checkIfUserOwnGroup;
+            _loadFlashcardsWhereGroupId = loadFlashcardsWhereGroupId;
         }
 
         public IActionResult Index()
@@ -61,6 +69,16 @@ namespace WebUI.Controllers
                 return RedirectToAction("GroupsList", new { errorMessages = _createNewGroup.GetUserMessages() });
 
             return RedirectToAction("GroupsList");
+        }
+
+        public IActionResult FlashcardsList(string groupId, List<string> errorMessages = null)
+        {
+            return View(new FlashcardsListViewModel(_loadFlashcardsWhereGroupId.Load(Guid.Parse(groupId)).Where(e => e.PracticeDirection == Models.PracticeDirection.FromNativeToForeign).ToList(), errorMessages));
+        }
+
+        public IActionResult CreateFlashcard(string native, string foreign)
+        {
+
         }
     }
 }

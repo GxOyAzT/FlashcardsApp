@@ -1,1 +1,55 @@
-﻿
+﻿@model FlashcardsListViewModel
+
+<div id="Shader"></div>
+
+<div id="MainFrame">
+    <div id="CreateNewFlashcardButton" onclick="ShowCreateNewFlashcardPanel()">
+        <img src="/images/plus-icon.png" />
+        <p>Add</p>
+    </div>
+    <div class="FlashcardList">
+        @foreach (var item in Model.FlashcardModels)
+        {
+            <div class="FlashcardListItem">
+                <div class="FLINative">@(item.NativeLanguage)</div>
+                <div class="FLIForeign">@(item.ForeignLanguage)</div>
+                <div class="FLIButtonsContainer">
+                    <div class="FLIBCModify" onclick="ShowModifyFlashcardPanel('@(item.NativeLanguage)', '@(item.ForeignLanguage)', '@(item.Id)')">
+                        <img src="/images/modify-icon.png" />
+                    </div>
+                    <a class="FLIBCDelete" href="#">
+                        <img src="/images/delete-icon.png" />
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="CreateNewFlashcard" id="CreateNewFlashcardId">
+    <form method="post">
+        <input maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignId" type="text" placeholder="foreign" />
+        <input maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeId" type="text" placeholder="native" />
+        <input type="submit" id="CNFPConfirm" value="Create">
+        <div id="CNFPDiscard" onclick="HideCreateNewFlashcardPanel()">
+            <img src="/images/discard-icon.png" />
+            <p>Discard</p>
+        </div>
+    </form>
+</div>
+
+<div class="ModifyFlashcardPanel" id="ModifyFlashcardPanelId">
+    <form method="post">
+        <input name="modifyFlashcardId" hidden type="text" id="FlashcardIdModify" />
+        <input maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignModifyId" type="text" placeholder="foreign" />
+        <input maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeModifyId" type="text"
+               placeholder="native" />
+        <input type="submit" id="CNFPConfirm" value="Modify"/>
+        <div id="CNFPDiscard" onclick="HideModifyFlashcardPanel()">
+            <img src="/images/discard-icon.png" />
+            <p>Discard</p>
+        </div>
+    </form>
+</div>
+
+<script src="/js/FlashcardsListScript.js"></script>

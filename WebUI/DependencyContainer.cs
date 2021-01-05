@@ -18,6 +18,7 @@ namespace WebUI
             services.AddScoped<ICreateNewGroup, CreateNewGroup>();
             services.AddScoped<ICheckIfGroupIdIsUnique, CheckIfGroupIdIsUnique>();
             services.AddScoped<ICheckIfUserOwnGroup, CheckIfUserOwnGroup>();
+            services.AddScoped<ILoadFlashcardsWhereGroupId, LoadFlashcardsWhereGroupId>();
         }
     }
 }
