@@ -28,9 +28,10 @@
 
 <div class="CreateNewFlashcard" id="CreateNewFlashcardId">
     <form method="post">
-        <input maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignId" type="text" placeholder="foreign" />
-        <input maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeId" type="text" placeholder="native" />
-        <input type="submit" id="CNFPConfirm" value="Create">
+        <input name="groupId" hidden value="@(Model.GroupId)" />
+        <input name="foreign" maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignId" type="text" placeholder="foreign" />
+        <input name="native" maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeId" type="text" placeholder="native" />
+        <input type="submit" id="CNFPConfirm" value="Create" asp-action="CreateFlashcard">
         <div id="CNFPDiscard" onclick="HideCreateNewFlashcardPanel()">
             <img src="/images/discard-icon.png" />
             <p>Discard</p>
@@ -40,16 +41,31 @@
 
 <div class="ModifyFlashcardPanel" id="ModifyFlashcardPanelId">
     <form method="post">
+        <input name="groupId" hidden value="@(Model.GroupId)" />
         <input name="modifyFlashcardId" hidden type="text" id="FlashcardIdModify" />
         <input maxlength="100" class="CNFFlashcardWorldInput" id="FlashcardForeignModifyId" type="text" placeholder="foreign" />
         <input maxlength="100" style="top: 100px;" class="CNFFlashcardWorldInput" id="FlashcardNativeModifyId" type="text"
                placeholder="native" />
-        <input type="submit" id="CNFPConfirm" value="Modify"/>
+        <input type="submit" id="CNFPConfirm" value="Modify" />
         <div id="CNFPDiscard" onclick="HideModifyFlashcardPanel()">
             <img src="/images/discard-icon.png" />
             <p>Discard</p>
         </div>
     </form>
 </div>
+
+@if (Model.ErrorMessages.Any())
+{
+    <div class="ErrorMessagesPanel" id="ErrorMessagesPanelId">
+        @foreach (var message in Model.ErrorMessages)
+        {
+            <p>@message</p>
+        }
+        <br />
+        <div class="EMPHideButton" onClick="HideErrorMessagesPanel()">
+            <p>OK</p>
+        </div>
+    </div>
+}
 
 <script src="/js/FlashcardsListScript.js"></script>

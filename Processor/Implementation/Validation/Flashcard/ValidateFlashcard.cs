@@ -33,7 +33,10 @@ namespace Processor
         void ValidateWord(string word, string foreignOrNative)
         {
             if (word == null)
-                throw new ArgumentNullException();
+            {
+                ErrorMessages.Add($"{foreignOrNative} cannot be empty.");
+                return;
+            }
 
             if (word == string.Empty)
             {

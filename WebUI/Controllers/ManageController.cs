@@ -19,6 +19,7 @@ namespace WebUI.Controllers
         private readonly ICreateNewGroup _createNewGroup;
         private readonly ICheckIfUserOwnGroup _checkIfUserOwnGroup;
         private readonly ILoadFlashcardsWhereGroupId _loadFlashcardsWhereGroupId;
+        private readonly ICreateFlashcard _createFlashcard;
 
         public ManageController(
             UserManager<IdentityUser> userManager, 
@@ -26,7 +27,8 @@ namespace WebUI.Controllers
             IDeleteGroup deleteGroup,
             ICreateNewGroup createNewGroup, 
             ICheckIfUserOwnGroup checkIfUserOwnGroup,
-            ILoadFlashcardsWhereGroupId loadFlashcardsWhereGroupId)
+            ILoadFlashcardsWhereGroupId loadFlashcardsWhereGroupId,
+            ICreateFlashcard createFlashcard)
         {
             _loadAllUserGroups = loadAllUserGroups;
             _userManager = userManager;
@@ -34,6 +36,7 @@ namespace WebUI.Controllers
             _createNewGroup = createNewGroup;
             _checkIfUserOwnGroup = checkIfUserOwnGroup;
             _loadFlashcardsWhereGroupId = loadFlashcardsWhereGroupId;
+            _createFlashcard = createFlashcard;
         }
 
         public IActionResult Index()
@@ -73,12 +76,18 @@ namespace WebUI.Controllers
 
         public IActionResult FlashcardsList(string groupId, List<string> errorMessages = null)
         {
-            return View(new FlashcardsListViewModel(_loadFlashcardsWhereGroupId.Load(Guid.Parse(groupId)).Where(e => e.PracticeDirection == Models.PracticeDirection.FromNativeToForeign).ToList(), errorMessages));
+            return View(new FlashcardsListViewModel(
+                _loadFlashcardsWhereGroupId.Load(Guid.Parse(groupId)).Where(e => e.PracticeDirection == Models.PracticeDirection.FromNativeToForeign).ToList(), 
+                errorMessages,
+                groupId));
         }
 
-        public IActionResult CreateFlashcard(string native, string foreign)
+        public IActionResult CreateFlashcard(string native, string foreign, string groupId)
         {
+            if (!_createFlashcard.Create(native, foreign, Guid.Parse(groupId)))
+                return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = _createFlashcard.GetUserMessages() });
 
+            return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = new List<string>() });
         }
     }
 }

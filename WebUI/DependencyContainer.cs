@@ -19,6 +19,11 @@ namespace WebUI
             services.AddScoped<ICheckIfGroupIdIsUnique, CheckIfGroupIdIsUnique>();
             services.AddScoped<ICheckIfUserOwnGroup, CheckIfUserOwnGroup>();
             services.AddScoped<ILoadFlashcardsWhereGroupId, LoadFlashcardsWhereGroupId>();
+            services.AddScoped<ICreateFlashcard, CreateFlashcard>();
+            services.AddScoped<ICheckIfFlashcardIdIsUnique, CheckIfFlashcardIdIsUnique>();
+            services.AddScoped<ICheckIfFlashcardIsUnique, CheckIfFlashcardIsUnique>();
+            services.AddScoped<IInsertNewFlashcard, InsertNewFlashcard>();
+            services.AddScoped<IValidateFlashcard, ValidateFlashcard>();
         }
     }
 }
