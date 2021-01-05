@@ -21,6 +21,7 @@ namespace WebUI.Controllers
         private readonly ILoadFlashcardsWhereGroupId _loadFlashcardsWhereGroupId;
         private readonly ICreateFlashcard _createFlashcard;
         private readonly IUpdateFlashcard _updateFlashcard;
+        private readonly IDeleteFlashcard _deleteFlashcard;
 
         public ManageController(
             UserManager<IdentityUser> userManager, 
@@ -30,7 +31,8 @@ namespace WebUI.Controllers
             ICheckIfUserOwnGroup checkIfUserOwnGroup,
             ILoadFlashcardsWhereGroupId loadFlashcardsWhereGroupId,
             ICreateFlashcard createFlashcard,
-            IUpdateFlashcard updateFlashcard)
+            IUpdateFlashcard updateFlashcard,
+            IDeleteFlashcard deleteFlashcard)
         {
             _loadAllUserGroups = loadAllUserGroups;
             _userManager = userManager;
@@ -40,6 +42,7 @@ namespace WebUI.Controllers
             _loadFlashcardsWhereGroupId = loadFlashcardsWhereGroupId;
             _createFlashcard = createFlashcard;
             _updateFlashcard = updateFlashcard;
+            _deleteFlashcard = deleteFlashcard;
         }
 
         public IActionResult Index()
@@ -93,10 +96,27 @@ namespace WebUI.Controllers
             return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = new List<string>() });
         }
 
-        public IActionResult ModifyFlashcard(string modifyFlashcardId, string native, string foreign, string groupId)
+        public async Task<IActionResult> ModifyFlashcard(string modifyFlashcardId, string native, string foreign, string groupId)
         {
+            var user = await _userManager.GetUserAsync(User);
+
+            if (!_checkIfUserOwnGroup.Check(user.Id, Guid.Parse(groupId)))
+                RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = "You have no permission to do that" });
+
             if (!_updateFlashcard.Update(native, foreign, Guid.Parse(modifyFlashcardId), Guid.Parse(groupId)))
                 return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = _updateFlashcard.GetUserMessages() });
+
+            return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = new List<string>() });
+        }
+
+        public async Task<IActionResult> DeleteFlashcard(string flashcardId, string groupId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            if (!_checkIfUserOwnGroup.Check(user.Id, Guid.Parse(groupId)))
+                return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = "You have no permission to do that" });
+
+            _deleteFlashcard.Delete(Guid.Parse(flashcardId));
 
             return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = new List<string>() });
         }

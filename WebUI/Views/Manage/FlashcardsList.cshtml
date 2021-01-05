@@ -17,7 +17,7 @@
                     <div class="FLIBCModify" onclick="ShowModifyFlashcardPanel('@(item.NativeLanguage)', '@(item.ForeignLanguage)', '@(item.Id)')">
                         <img src="/images/modify-icon.png" />
                     </div>
-                    <a class="FLIBCDelete" href="#">
+                    <a class="FLIBCDelete" asp-action="DeleteFlashcard" asp-route-flashcardId="@(item.Id)" asp-route-groupId="@(Model.GroupId)" >
                         <img src="/images/delete-icon.png" />
                     </a>
                 </div>
