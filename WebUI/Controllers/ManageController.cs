@@ -20,6 +20,7 @@ namespace WebUI.Controllers
         private readonly ICheckIfUserOwnGroup _checkIfUserOwnGroup;
         private readonly ILoadFlashcardsWhereGroupId _loadFlashcardsWhereGroupId;
         private readonly ICreateFlashcard _createFlashcard;
+        private readonly IUpdateFlashcard _updateFlashcard;
 
         public ManageController(
             UserManager<IdentityUser> userManager, 
@@ -28,7 +29,8 @@ namespace WebUI.Controllers
             ICreateNewGroup createNewGroup, 
             ICheckIfUserOwnGroup checkIfUserOwnGroup,
             ILoadFlashcardsWhereGroupId loadFlashcardsWhereGroupId,
-            ICreateFlashcard createFlashcard)
+            ICreateFlashcard createFlashcard,
+            IUpdateFlashcard updateFlashcard)
         {
             _loadAllUserGroups = loadAllUserGroups;
             _userManager = userManager;
@@ -37,6 +39,7 @@ namespace WebUI.Controllers
             _checkIfUserOwnGroup = checkIfUserOwnGroup;
             _loadFlashcardsWhereGroupId = loadFlashcardsWhereGroupId;
             _createFlashcard = createFlashcard;
+            _updateFlashcard = updateFlashcard;
         }
 
         public IActionResult Index()
@@ -92,7 +95,10 @@ namespace WebUI.Controllers
 
         public IActionResult ModifyFlashcard(string modifyFlashcardId, string native, string foreign, string groupId)
         {
+            if (!_updateFlashcard.Update(native, foreign, Guid.Parse(modifyFlashcardId), Guid.Parse(groupId)))
+                return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = _updateFlashcard.GetUserMessages() });
 
+            return RedirectToAction("FlashcardsList", new { groupId = groupId, errorMessages = new List<string>() });
         }
     }
 }
