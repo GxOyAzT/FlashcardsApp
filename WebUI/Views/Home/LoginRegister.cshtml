@@ -33,13 +33,13 @@
 
 @if (Model.Any())
 {
-    <div class="LoginErrorMessagesPanel" id="LoginErrorMessagesPanelId">
+    <div class="ErrorMessagesPanel" id="ErrorMessagesPanelId">
         @foreach(var message in Model)
         {
             <p>@message</p>
         }
         <br />
-        <div class="LEMPHideButton" onClick="HideLoginErrorMessagesPanel()">
+        <div class="EMPHideButton" onClick="HideErrorMessagesPanel()">
             <p>OK</p>
         </div>
     </div>

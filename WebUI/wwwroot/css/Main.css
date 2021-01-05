@@ -52,6 +52,12 @@
     transition: background 0.5s;
 }
 
+.NBButton > a > img{
+    position: relative;
+    height: 90%;
+    
+}
+
 .NBButton:hover .NBButtonClue {
     transform: translateX(70px);
 }
@@ -63,11 +69,12 @@
 .NBButtonClue {
     position: relative;
     background: #065c03;
-    height: 70px;
+    height: 60px;
     width: 230px;
     transform: translateX(-100%);
     transition: transform 0.5s;
     z-index: 8;
+    top: 5px;
 }
 
 .NBBLink {
@@ -94,7 +101,7 @@
 }
 
 #Shader {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background: #1e1e1ea4;
@@ -111,6 +118,50 @@
     right: 1%;
     z-index: 4;
     overflow: visible;
+}
+
+.ErrorMessagesPanel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 96%;
+    max-width: 490px;
+    height: auto;
+    background: rgb(47, 47, 49);
+    border-radius: 10px;
+    color: white;
+    z-index: 1001;
+}
+
+.EMPHideButton {
+    bottom: 10px;
+    margin: auto;
+    position: relative;
+    height: 40px;
+    width: 70px;
+    background: #1a8f08;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.EMPHideButton:hover {
+    background: #23bd0b;
+}
+
+.EMPHideButton > p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    font-size: 20px;
+}
+
+.ErrorMessagesPanel > p {
+    margin: 10px;
+    background: inherit;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 500px) {

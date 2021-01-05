@@ -175,45 +175,6 @@
     text-align: center;
 }
 
-/* NEW */
-.LoginErrorMessagesPanel {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 96%;
-    max-width: 490px;
-    height: auto;
-    background: rgb(47, 47, 49);
-    border-radius: 10px;
-    color: white;
-}
-
-.LEMPHideButton {
-    bottom: 10px;
-    margin: auto;
-    position: relative;
-    height: 40px;
-    width: 70px;
-    background: #1a8f08;
-    border-radius: 10px;
-}
-
-.LEMPHideButton > p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: transparent;
-    font-size: 20px;
-}
-
-.LoginErrorMessagesPanel > p {
-    margin: 10px;
-    background: inherit;
-    font-size: 20px;
-}
-
 .LEMPHideButton:hover {
     background: #20b30a;
 }

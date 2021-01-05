@@ -19,12 +19,7 @@ namespace Processor
 
         public bool Validate(string description)
         {
-            if (description == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (description == string.Empty)
+            if (description == string.Empty || description == null)
             {
                 return true;
             }

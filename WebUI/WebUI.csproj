@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DatabaseModuleInterface\DatabaseModuleInterface.csproj" />
     <ProjectReference Include="..\DatabaseModule\DatabaseModule.csproj" />
+    <ProjectReference Include="..\Processor\Processor.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿@model List<GroupDbModel> 
+﻿@model GroupsListViewModel
 
 <div id="Shader"></div>
 
@@ -8,7 +8,7 @@
         <p>New</p>
     </div>
     <div id="GroupsWrapper">
-        @foreach (var group in Model)
+        @foreach (var group in Model.GroupModels)
         {
             <div class="GroupFolder">
                 <input hidden value="GUDI-1" />
@@ -22,7 +22,7 @@
                         <img src="/images/modify-icon.png" />
                     </a>
                     <a href="#" class="BFBWPractice">
-                        <img src="/images/delete-icon.png" />
+                        <img src="" alt="practice" />
                     </a>
                 </div>
             </div>
@@ -30,13 +30,13 @@
     </div>
 </div>
 
-<form id="CreateNewGroupPanel">
-    <input id="CNGPName" placeholder="Name" maxlength="30" type="text" />
-    <textarea id="CNGPDescription" placeholder="Description (optional)" maxlength="150" type="text"></textarea>
-    <a id="CNGPConfirm" asp-action="" type="submit">
+<form id="CreateNewGroupPanel" method="post">
+    <input name="groupName" id="CNGPName" placeholder="Name" maxlength="30" type="text" />
+    <textarea name="description" id="CNGPDescription" placeholder="Description (optional)" maxlength="150" type="text"></textarea>
+    <button id="CNGPConfirm" asp-action="CreateGroup" type="submit">
         <img src="/images/plus-icon.png" />
         <p>Create</p>
-    </a>
+    </button>
     <div id="CNGPDiscard" onclick="HideCreateNewGroupPanel()">
         <img src="/images/discard-icon.png" />
         <p>Discard</p>
@@ -47,12 +47,26 @@
     <img class="WarningImage" src="/images/warning-icon-big.png" />
     <p>Are you sure you want to delete this group? This means all flashcards in this group will be deleted.</p>
     <div class="GDCPButtons">
-        <form>
-            <input name="flashcardId" hidden id="DeleteGroupId"/>
-            <input class="GDCPBYes" type="submit" asp-action="DeleteGroup"/>
+        <form method="post">
+            <input name="groupId" hidden id="DeleteGroupId" />
+            <input class="GDCPBYes" type="submit" asp-action="DeleteGroup" value="Yes"/>
             <div class="GDCPBNo" onclick="DeleteGroupWarningMessageHide()"><p>No</p></div>
         </form>
     </div>
 </div>
+
+@if (Model.ErrorMessages.Any())
+{
+    <div class="ErrorMessagesPanel" id="ErrorMessagesPanelId">
+        @foreach (var message in Model.ErrorMessages)
+        {
+            <p>@message</p>
+        }
+        <br />
+        <div class="EMPHideButton" onClick="HideErrorMessagesPanel()">
+            <p>OK</p>
+        </div>
+    </div>
+}
 
 <script src="~/js/GroupListScript.js"></script>

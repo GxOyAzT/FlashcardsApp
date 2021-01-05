@@ -30,6 +30,12 @@ namespace WebAppAuth.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
+            if (email == null || email == string.Empty || password == null || password == string.Empty)
+            {
+                return RedirectToAction("LoginRegister",
+                    new { errorMessages = new List<string>() { "Incorrect data input." } });
+            }
+
             var user = await _userManager.FindByEmailAsync(email);
 
             if (user == null)

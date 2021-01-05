@@ -63,7 +63,7 @@ namespace XUnitTests.Processor
 
             IValidateGroupName _processor = new ValidateGroupName();
 
-            Assert.False(_processor.Validate(input));
+            Assert.True(_processor.Validate(input));
         }
 
         [Fact]

@@ -38,17 +38,17 @@
   border-color: #fff;
 }
 
-#CreateNewGroupPanel {
-  display: none;
-  position: absolute;
-  background: #4a8bd1;
-  height: 400px;
-  width: 500px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1001;
-  border-radius: 15px;
+#CreateNewGroupPanel{
+    display: none;
+    position: absolute;
+    background: #4a8bd1;
+    height: 400px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    border-radius: 15px;
 }
 
 #CNGPName {
@@ -228,16 +228,20 @@
   border-radius: 10px;
 }
 
+.BFBWDelete:hover{
+    cursor: pointer;
+}
+
 .BFBWDetails {
-  float: left;
-  height: 50px;
-  width: 50px;
-  position: relative;
-  margin: auto;
-  background: #07518f;
-  border-radius: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+    float: left;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    margin: auto;
+    background: #07518f;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .BFBWPractice {
@@ -263,7 +267,7 @@
 
 #GroupDeleteConfirmationPanel {
   display: none;
-  position: absolute;
+  position: fixed;
   height: 200px;
   width: 450px;
   background: #2e2d2d;
@@ -296,34 +300,30 @@
 }
 
 .GDCPButtons {
-  position: absolute;
-  bottom: 10px;
-  background: transparent;
-  left: 50%;
-  transform: translateX(-50%);
-  background: transparent;
+    position: absolute;
+    bottom: 10px;
+    background: transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2e2d2d;
+}
+
+.GDCPButtons > form {
+    background: inherit;
 }
 
 .GDCPBYes {
-  float: left;
-  display: block;
-  height: 50px;
-  width: 80px;
-  background: green;
-  border-radius: 10px;
-  margin-right: 10px;
-  text-decoration: none;
-  color: white;
-}
-
-.GDCPBYes > p {
-  position: relative;
-  background: transparent;
-  display: block;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 25px;
+    float: left;
+    display: block;
+    height: 50px;
+    width: 80px;
+    background: green;
+    border-radius: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    font-size: 25px;
 }
 
 .GDCPBNo {

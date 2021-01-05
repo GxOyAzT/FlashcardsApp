@@ -23,12 +23,7 @@ namespace Processor
 
         public bool Validate(string groupName)
         {
-            if (groupName == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (groupName == string.Empty)
+            if (groupName == string.Empty || groupName == null)
             {
                 ErrorMessages.Add("Group name cannot be empty.");
                 return false;
@@ -39,7 +34,7 @@ namespace Processor
                 ErrorMessages.Add("Group name cannot be longer then 30 characters.");
             }
 
-            if (!(new Regex("^[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 ]{1,30}$")).IsMatch(groupName))
+            if (!(new Regex("^[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 /*=+.,?&^%$#@!(){}]{1,30}$")).IsMatch(groupName))
             {
                 ErrorMessages.Add("Group name can contain only letters, numbers or spaces.");
             }

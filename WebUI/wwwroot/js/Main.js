@@ -21,3 +21,8 @@ function HideOrShowNavigationBar() {
     }
     navBar.style.top = "80px";
 }
+
+function HideErrorMessagesPanel() {
+    document.getElementById("ErrorMessagesPanelId").style.display = "none";
+    document.getElementById("Shader").style.display = "none";
+}

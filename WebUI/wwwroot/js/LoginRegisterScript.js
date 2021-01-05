@@ -70,8 +70,3 @@ function ClickLoginButton() {
 function ClickRegisterButton() {
     ClickRegisterContainer();
 }
-
-function HideLoginErrorMessagesPanel() {
-    document.getElementById("LoginErrorMessagesPanelId").style.display = "none";
-    document.getElementById("Shader").style.display = "none";
-}
