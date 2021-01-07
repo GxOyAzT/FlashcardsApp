@@ -1,0 +1,49 @@
+﻿@model PracticeViewModel
+
+<div id="MainFrame">
+    <input hidden id="TotalFlashcardCountId" value="@(Model.TotalFlashcards)" />
+
+    <form method="post">
+        @for (int i = 1; i <= Model.TotalFlashcards; i++)
+        {
+            <input asp-for="PracticeFlashcards[i-1].Id" hidden id="Flashcard-id-@(i)" />
+            <input asp-for="PracticeFlashcards[i-1].PracticeDirection" hidden id="Flashcard-practiceDrirection-@(i)">
+            <input asp-for="PracticeFlashcards[i-1].Progress" hidden id="Flashcard-practiceStatus-@(i)" />
+            if (Model.PracticeFlashcards[i-1].PracticeDirection == (int)PracticeDirection.FromNativeToForeign)
+            {
+                <div class="FlashcardPractice" onclick="ShowAnswer('FlashcardPractice-front-@(i)', 'FlashcardPractice-back-@(i)')" id="FlashcardPractice-front-@(i)">
+                    <p>@(Model.PracticeFlashcards[i-1].Native)</p>
+                </div>
+                <div class="FlashcardPractice" id="FlashcardPractice-back-@(i)">
+                    <p>@(Model.PracticeFlashcards[i-1].Foreign)</p>
+                </div>
+            }
+            else
+            {
+                <div class="FlashcardPractice" onclick="ShowAnswer('FlashcardPractice-front-@(i)', 'FlashcardPractice-back-@(i)')" id="FlashcardPractice-front-@(i)">
+                    <p>@(Model.PracticeFlashcards[i-1].Foreign)</p>
+                </div>
+                <div class="FlashcardPractice" id="FlashcardPractice-back-@(i)">
+                    <p>@(Model.PracticeFlashcards[i-1].Native)</p>
+                </div>
+            }
+        }
+
+        <div class="FinalPanel" id="FinalPanelId">
+            <p>All done</p>
+            <br />
+            <input type="submit" class="FPButton FPButtonGiveMore" value="Give me more" asp-action="Practice"/>
+            <br />
+            <br />
+            <input type="submit" class="FPButton FPButtonThatsEnough" value="That's enough" />
+        </div>
+    </form>
+
+    <div class="ButtonsPracticeStatusWrpaer" id="ButtonsPracticeStatusWrpaerId">
+        <div class="BPSButton BPSOk" onclick="SetFlashcardAsKnow()"><p>Know</p></div>
+        <div class="BPSButton BPSAlmostKnow" onclick="SetFlashcardAsAlmostKnow()"><p>Almost know</p></div>
+        <div class="BPSButton BPSDontKnow" onclick="SetFlashcardAsDontKnow()"><p>Don't know</p></div>
+    </div>
+</div>
+
+<script src="~/js/PracticeScript.js"></script>

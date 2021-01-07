@@ -27,6 +27,7 @@ namespace WebUI
             services.AddScoped<IUpdateFlashcardWords, UpdateFlashcardWords>();
             services.AddScoped<IUpdateFlashcard, UpdateFlashcard>();
             services.AddScoped<IDeleteFlashcard, DeleteFlashcard>();
+            services.AddScoped<ILoadFiveFlashcardsForLearnWherUserId, LoadFiveFlashcardsForLearnWherUserId>();
         }
     }
 }
