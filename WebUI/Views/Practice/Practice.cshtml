@@ -6,25 +6,26 @@
     <form method="post">
         @for (int i = 1; i <= Model.TotalFlashcards; i++)
         {
-            <input asp-for="PracticeFlashcards[i-1].Id" hidden id="Flashcard-id-@(i)" />
-            <input asp-for="PracticeFlashcards[i-1].PracticeDirection" hidden id="Flashcard-practiceDrirection-@(i)">
-            <input asp-for="PracticeFlashcards[i-1].Progress" hidden id="Flashcard-practiceStatus-@(i)" />
-            if (Model.PracticeFlashcards[i-1].PracticeDirection == (int)PracticeDirection.FromNativeToForeign)
+            <input asp-for="FlashcardPracticeModels[i-1].Id" hidden id="Flashcard-id-@(i)" />
+            <input asp-for="FlashcardPracticeModels[i-1].PracticeDirection" hidden id="Flashcard-practiceDrirection-@(i)">
+            <input asp-for="FlashcardPracticeModels[i-1].FlashcardKnowledgeInt" hidden id="Flashcard-practiceStatus-@(i)" />
+            <input asp-for="FlashcardPracticeModels[i-1].CorreactAnsInRow" hidden />
+            if (Model.FlashcardPracticeModels[i - 1].PracticeDirection == PracticeDirection.FromNativeToForeign)
             {
                 <div class="FlashcardPractice" onclick="ShowAnswer('FlashcardPractice-front-@(i)', 'FlashcardPractice-back-@(i)')" id="FlashcardPractice-front-@(i)">
-                    <p>@(Model.PracticeFlashcards[i-1].Native)</p>
+                    <p>@(Model.FlashcardPracticeModels[i-1].NativeLanguage)</p>
                 </div>
                 <div class="FlashcardPractice" id="FlashcardPractice-back-@(i)">
-                    <p>@(Model.PracticeFlashcards[i-1].Foreign)</p>
+                    <p>@(Model.FlashcardPracticeModels[i-1].ForeignLanguage)</p>
                 </div>
             }
             else
             {
                 <div class="FlashcardPractice" onclick="ShowAnswer('FlashcardPractice-front-@(i)', 'FlashcardPractice-back-@(i)')" id="FlashcardPractice-front-@(i)">
-                    <p>@(Model.PracticeFlashcards[i-1].Foreign)</p>
+                    <p>@(Model.FlashcardPracticeModels[i-1].ForeignLanguage)</p>
                 </div>
                 <div class="FlashcardPractice" id="FlashcardPractice-back-@(i)">
-                    <p>@(Model.PracticeFlashcards[i-1].Native)</p>
+                    <p>@(Model.FlashcardPracticeModels[i-1].NativeLanguage)</p>
                 </div>
             }
         }
@@ -32,7 +33,7 @@
         <div class="FinalPanel" id="FinalPanelId">
             <p>All done</p>
             <br />
-            <input type="submit" class="FPButton FPButtonGiveMore" value="Give me more" asp-action="Practice"/>
+            <input type="submit" class="FPButton FPButtonGiveMore" value="Give me more" asp-action="Practice" />
             <br />
             <br />
             <input type="submit" class="FPButton FPButtonThatsEnough" value="That's enough" />

@@ -23,6 +23,7 @@ namespace Processor
             }
             else if (input.FlashcardKnowledge == FlashcardKnowledge.AlmostKnow)
             {
+                input.CorreactAnsInRow = input.CorreactAnsInRow;
                 input.NextPracticeDate = DateTime.Now.Date.AddDays(1);
 
                 return input.CloneFlashcardDbModel();

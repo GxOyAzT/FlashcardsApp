@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -24,18 +25,20 @@ namespace WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Practice()
         {
-            List<PracticeFlashcard> practiceFlashcards = new List<PracticeFlashcard>();
+            List<FlashcardPracticeModel> practiceFlashcards = new List<FlashcardPracticeModel>();
 
             var user = await _userManager.GetUserAsync(User);
 
             foreach (var item in _loadFiveFlashcardsForLearnWherUserId.Load(user.Id))
             {
-                practiceFlashcards.Add(new PracticeFlashcard()
+                practiceFlashcards.Add(new FlashcardPracticeModel()
                 {
-                    Id = item.Id.ToString(),
-                    Foreign = item.ForeignLanguage,
-                    Native = item.NativeLanguage,
-                    PracticeDirection = (int)item.PracticeDirection
+                    Id = item.Id,
+                    ForeignLanguage = item.ForeignLanguage,
+                    NativeLanguage = item.NativeLanguage,
+                    PracticeDirection = item.PracticeDirection,
+                    FlashcardKnowledgeInt = -1,
+                    CorreactAnsInRow = item.CorreactAnsInRow
                 });
             }
 

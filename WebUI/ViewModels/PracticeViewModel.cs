@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Models;
+using System.Collections.Generic;
 
 namespace WebUI
 {
     public class PracticeViewModel
     {
-        public PracticeViewModel(int totalFlashcards, List<PracticeFlashcard> practiceFlashcards)
+        public PracticeViewModel(int totalFlashcards, List<FlashcardPracticeModel> flashcardPracticeModels)
         {
             TotalFlashcards = totalFlashcards;
-            PracticeFlashcards = practiceFlashcards;
+            FlashcardPracticeModels = flashcardPracticeModels;
         }
 
         public PracticeViewModel()
@@ -16,6 +17,6 @@ namespace WebUI
         }
 
         public int TotalFlashcards { get; set; }
-        public List<PracticeFlashcard> PracticeFlashcards { get; set; }
+        public List<FlashcardPracticeModel> FlashcardPracticeModels { get; set; }
     }
 }
