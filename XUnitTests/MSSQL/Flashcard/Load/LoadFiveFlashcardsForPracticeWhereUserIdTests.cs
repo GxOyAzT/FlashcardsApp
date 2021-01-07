@@ -10,29 +10,27 @@ namespace XUnitTests.MSSQL
     public class LoadFiveFlashcardsForPracticeWhereUserIdTests
     {
         [Fact]
-        public void LoadFiveFlashcardsForPracticeWhereUserIdTestA()
+        public void LoadFiveFlashcardsForPracticeWhereUserIdTestB()
         {
-            ResetTestDatabasePostgreSQLv4.Reset();
+            ResetTestDatabasev6.Reset();
 
             LoadFiveFlashcardsForPracticeWhereUserId _processor = new LoadFiveFlashcardsForPracticeWhereUserId();
 
-            var output = _processor.Load("c4a82913-7936-4448-a9e9-d33e5796a414");
-
-            Assert.NotNull(output.
-                FirstOrDefault(e => 
-                e.Id == Guid.Parse("45433894-5820-413F-93FB-46429BA8486A") && e.PracticeDirection == PracticeDirection.FromForeignToNative));
-
-            Assert.NotNull(output.
-                FirstOrDefault(e => 
-                e.Id == Guid.Parse("0B6799B7-9734-49C2-B701-770AD9601284") && e.PracticeDirection == PracticeDirection.FromNativeToForeign));
+            var output = _processor.Load("a2c76aeb-94ff-4020-bc19-059877fe8705");
 
             Assert.NotNull(output.
                 FirstOrDefault(e =>
-                e.Id == Guid.Parse("58D47AAF-DDCD-47D0-B8A1-4FEBD4E24C7F") && e.PracticeDirection == PracticeDirection.FromNativeToForeign));
+                e.Id == Guid.Parse("2b134d1a-965d-4e97-888e-bdd64a044eb9") && e.PracticeDirection == PracticeDirection.FromForeignToNative));
+
+            Assert.NotNull(output.
+                FirstOrDefault(e =>
+                e.Id == Guid.Parse("be5f6658-18e7-49e3-9c61-b3a2e073042f") && e.PracticeDirection == PracticeDirection.FromForeignToNative));
 
             Assert.Null(output.
                 FirstOrDefault(e =>
-                e.Id == Guid.Parse("DEADEC4A-1FA4-4ED8-809D-B92EB5FECC6C") && e.PracticeDirection == PracticeDirection.FromNativeToForeign));
+                e.Id == Guid.Parse("be5f6658-18e7-49e3-9c61-b3a2e073042f") && e.PracticeDirection == PracticeDirection.FromNativeToForeign));
+
+            Assert.Equal(2, output.Count);
         }
     }
 }

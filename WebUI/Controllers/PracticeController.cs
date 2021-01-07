@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using Processor;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -13,13 +14,19 @@ namespace WebUI.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILoadFiveFlashcardsForLearnWherUserId _loadFiveFlashcardsForLearnWherUserId;
+        private readonly ILoadFiveFlashcardsForPracticeWhereUserId _loadFiveFlashcardsForPracticeWhereUserId;
+        private readonly IReCalculateAndUpdatePracticePropertiesList _reCalculateAndUpdatePracticePropertiesList;
 
         public PracticeController(
             UserManager<IdentityUser> userManager, 
-            ILoadFiveFlashcardsForLearnWherUserId loadFiveFlashcardsForLearnWherUserId)
+            ILoadFiveFlashcardsForLearnWherUserId loadFiveFlashcardsForLearnWherUserId,
+            ILoadFiveFlashcardsForPracticeWhereUserId loadFiveFlashcardsForPracticeWhereUserId,
+            IReCalculateAndUpdatePracticePropertiesList reCalculateAndUpdatePracticePropertiesList)
         {
             _userManager = userManager;
             _loadFiveFlashcardsForLearnWherUserId = loadFiveFlashcardsForLearnWherUserId;
+            _loadFiveFlashcardsForPracticeWhereUserId = loadFiveFlashcardsForPracticeWhereUserId;
+            _reCalculateAndUpdatePracticePropertiesList = reCalculateAndUpdatePracticePropertiesList;
         }
 
         [HttpGet]
@@ -29,7 +36,7 @@ namespace WebUI.Controllers
 
             var user = await _userManager.GetUserAsync(User);
 
-            foreach (var item in _loadFiveFlashcardsForLearnWherUserId.Load(user.Id))
+            foreach (var item in _loadFiveFlashcardsForPracticeWhereUserId.Load(user.Id))
             {
                 practiceFlashcards.Add(new FlashcardPracticeModel()
                 {
@@ -48,9 +55,9 @@ namespace WebUI.Controllers
         [HttpPost]
         public IActionResult Practice(PracticeViewModel inputModel)
         {
+            _reCalculateAndUpdatePracticePropertiesList.ReCauculate(inputModel.FlashcardPracticeModels);
 
-
-            return View();
+            return RedirectToAction("Practice");
         }
     }
 }

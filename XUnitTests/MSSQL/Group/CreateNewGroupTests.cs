@@ -63,7 +63,6 @@ namespace XUnitTests.MSSQL
 
             Assert.False(_processor.Create(groupName, description, userId));
             Assert.Contains("Description cannot be longer then 200 characters.", _processor.GetUserMessages());
-            Assert.Contains("Group name can contain only letters, numbers or spaces.", _processor.GetUserMessages());
         }
     }
 }

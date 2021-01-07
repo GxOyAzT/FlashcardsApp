@@ -81,7 +81,7 @@ namespace XUnitTests.Processor
 
             IValidateFlashcard _processor = new ValidateFlashcard();
 
-            Assert.Throws<ArgumentNullException>(() => _processor.Validate(foreign, native));
+            Assert.False(_processor.Validate(foreign, native));
         }
 
         [Fact]
