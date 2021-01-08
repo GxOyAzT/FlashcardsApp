@@ -30,26 +30,16 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Practice(string groupId = null)
+        public async Task<IActionResult> Practice(int howMany, int learnOrPractice, string groupId = null)
         {
-            List<FlashcardPracticeModel> practiceFlashcards = new List<FlashcardPracticeModel>();
-
-            var user = await _userManager.GetUserAsync(User);
-
-            foreach (var item in _loadFiveFlashcardsForPracticeWhereUserId.Load(user.Id))
+            if (howMany == 0 || learnOrPractice == 0)
             {
-                practiceFlashcards.Add(new FlashcardPracticeModel()
-                {
-                    Id = item.Id,
-                    ForeignLanguage = item.ForeignLanguage,
-                    NativeLanguage = item.NativeLanguage,
-                    PracticeDirection = item.PracticeDirection,
-                    FlashcardKnowledgeInt = -1,
-                    CorreactAnsInRow = item.CorreactAnsInRow
-                });
+                RedirectToAction("BeforePractice");
             }
 
-            return View(new PracticeViewModel(practiceFlashcards.Count, practiceFlashcards));
+
+
+            return View();
         }
 
         [HttpPost]
@@ -58,6 +48,22 @@ namespace WebUI.Controllers
             _reCalculateAndUpdatePracticePropertiesList.ReCauculate(inputModel.FlashcardPracticeModels);
 
             return RedirectToAction("Practice");
+        }
+
+        [HttpGet]
+        public IActionResult BeforePractice()
+        {
+            return View(new BeforePracticeViewModel()
+            {
+                HowManyNewFlashcardsLearnList = new List<int>() { 2,5,10,15},
+                HowManyNewFlashcardsPracticeList = new List<int>() { 2, 5 }
+            });
+        }
+
+        [HttpPost]
+        public IActionResult BeforePractice(int howMany, int learnOrPractice, string groupId = null)
+        {
+            return RedirectToAction("Practice", new { howMany, learnOrPractice, groupId });
         }
     }
 }

@@ -1,0 +1,60 @@
+﻿@model BeforePracticeViewModel
+
+<div id="MainFrame">
+    <div class="PracticeOrLearnWrapper" id="PracticeOrLearnWrapperId">
+        @if (Model.HowManyNewFlashcardsLearnList.Any() || Model.HowManyNewFlashcardsPracticeList.Any())
+        {
+            <p class="Noselect">What do you want?</p>
+        }
+        else
+        {
+            <p class="Noselect">You have no more flashcard to learn or practice for today.</p>
+        }
+        <br />
+        @if (Model.HowManyNewFlashcardsLearnList.Any())
+        {
+            <div class="POLWButton Noselect" onclick="SetModeAsLearnNew()">
+                <p>Learn</p>
+            </div>
+        }
+        @if (Model.HowManyNewFlashcardsPracticeList.Any())
+        {
+            <div class="POLWButton Noselect" onclick="SetModeAsPractice()">
+                <p>Practice</p>
+            </div>
+        }
+    </div>
+
+    <div class="HowManyFlashcardsWrapper" id="HowManyFlashcardsLearnWrapperId">
+        <p class="Noselect">How many?</p>
+        @foreach (var number in Model.HowManyNewFlashcardsLearnList)
+        {
+            <div class="HMFWItem" onclick="SetQuantity(@number, 'l')">
+                <p class="Noselect">@number.ToString()</p>
+            </div>
+        }
+    </div>
+
+    <div class="HowManyFlashcardsWrapper" id="HowManyFlashcardsPracticeWrapperId">
+        <p class="Noselect">How many?</p>
+        @foreach (var number in Model.HowManyNewFlashcardsPracticeList)
+        {
+            <div class="HMFWItem" onclick="SetQuantity(@number, 'p')">
+                <p class="Noselect">@number.ToString()</p>
+            </div>
+        }
+    </div>
+
+    <div>
+        <form class="StartWrapper" id="StartWrapperId" method="post">
+            <input name="learnOrPractice" type="number" hidden id="ModePracticeLearnId" />
+            <input name="howMany" type="number" hidden id="HowManyFlashcardsId" />
+            <input name="groupId" type="text" hidden />
+            <button type="submit" class="SWButton" asp-action="BeforePractice">
+                <p class="Noselect">Start</p>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/BeforePracticeScript.js"></script>

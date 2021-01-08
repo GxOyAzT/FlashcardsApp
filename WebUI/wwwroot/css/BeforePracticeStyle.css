@@ -1,0 +1,152 @@
+﻿.PracticeOrLearnWrapper {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: auto;
+    background: transparent;
+}
+
+.PracticeOrLearnWrapper > p {
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-size: 45px;
+}
+
+.POLWButton {
+    display: block;
+    float: left;
+    position: relative;
+    background: #0f77b8;
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    border-radius: 20px;
+    transition: height 0.5s, width 0.5s, transform 0.5s, background 0.5s;
+}
+
+.POLWButton > p {
+    position: relative;
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-size: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.POLWButton:hover {
+    height: 320px;
+    width: 320px;
+    transform: translateY(-10px);
+    background: #128dda;
+    transition: height 0.5s, width 0.5s, transform 0.5s, background 0.5s;
+}
+
+.HowManyFlashcardsWrapper {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 400px;
+    background: transparent;
+    overflow: visible;
+}
+
+.HowManyFlashcardsWrapper > p {
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-size: 45px;
+}
+
+.HMFWItem {
+    position: relative;
+    height: 50px;
+    width: 380px;
+    float: left;
+    margin-top: 20px;
+    background: #0f77b8;
+    border-radius: 20px;
+    transition: height 0.5s, width 0.5s, transform 0.5s, background 0.5s;
+    overflow: hidden;
+}
+
+.HMFWItem:hover {
+    height: 60px;
+    width: 400px;
+    transform: translateX(-10px);
+    background: #128dda;
+    transition: height 0.5s, width 0.5s, transform 0.5s, background 0.5s;
+}
+
+.HMFWItem > p {
+    position: relative;
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-size: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.StartWrapper {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+}
+
+.StartWrapper > form {
+    position: relative;
+    background: transparent;
+}
+
+.SWButton {
+    display: block;
+    height: 90px;
+    width: 400px;
+    background: #52b31a;
+    outline: none;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    transition: height 0.5s, width 0.5s, background 0.5s;
+}
+
+.SWButton:hover {
+    background: #63d620;
+    height: 100px;
+    width: 420px;
+    transition: height 0.5s, width 0.5s, background 0.5s;
+}
+
+.SWButton > p {
+    position: relative;
+    text-align: center;
+    background: transparent;
+    color: white;
+    font-size: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+@media only screen and (max-width: 500px) {
+    .PracticeOrLearnWrapper {
+        height: 90%;
+        width: 80%;
+    }
+
+    .POLWButton {
+        width: 90%;
+        height: 30%;
+    }
+}
