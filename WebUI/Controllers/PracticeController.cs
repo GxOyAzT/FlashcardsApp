@@ -30,7 +30,7 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Practice()
+        public async Task<IActionResult> Practice(string groupId = null)
         {
             List<FlashcardPracticeModel> practiceFlashcards = new List<FlashcardPracticeModel>();
 

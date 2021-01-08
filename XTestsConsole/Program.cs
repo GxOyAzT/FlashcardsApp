@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using DatabaseModule;
-using Models;
-using Processor;
-using XUnitTests;
+﻿using XUnitTests;
 
 namespace XTestsConsole
 {

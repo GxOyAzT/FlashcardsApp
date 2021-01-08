@@ -22,7 +22,7 @@ namespace WebUI
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    _configuration.GetConnectionString("DefaultConnection")));
+                    _configuration.GetConnectionString("TestsConnection")));
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

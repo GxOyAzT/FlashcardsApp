@@ -19,6 +19,7 @@ namespace XUnitTests
         {
             GroupDbModels = new List<GroupDbModel>();
 
+            // Group-1 User-A
             GroupDbModels.Add(new GroupDbModel()
             {
                 Id = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046"),
@@ -27,6 +28,7 @@ namespace XUnitTests
                 UserId = "00782523-7206-403a-b953-75cfa7ccb4e1"
             });
 
+            // Group-2 User-B
             GroupDbModels.Add(new GroupDbModel()
             {
                 Id = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72"),
@@ -35,6 +37,7 @@ namespace XUnitTests
                 UserId = "466c7fca-ad58-4e9d-b88a-e3926386735f"
             });
 
+            // Group-3 User-B
             GroupDbModels.Add(new GroupDbModel()
             {
                 Id = Guid.Parse("d7e0f1ef-49de-486e-b88a-d0e0c1d8f496"),
@@ -43,6 +46,7 @@ namespace XUnitTests
                 UserId = "466c7fca-ad58-4e9d-b88a-e3926386735f"
             });
 
+            // Group-4 User-B
             GroupDbModels.Add(new GroupDbModel()
             {
                 Id = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e"),
@@ -51,7 +55,7 @@ namespace XUnitTests
                 UserId = "466c7fca-ad58-4e9d-b88a-e3926386735f"
             });
 
-            // Group-5
+            // Group-5 User-C
             GroupDbModels.Add(new GroupDbModel()
             {
                 Id = Guid.Parse("9098d9d1-48f6-4baf-b669-602e7f7efb4b"),
@@ -64,8 +68,9 @@ namespace XUnitTests
         {
             FlashcardDbModels = new List<FlashcardDbModel>();
 
-            // Group-1
+            // Group-1 User-A
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("073e83a0-57ff-43b8-a2c7-56a54b5ab22c"),
@@ -77,6 +82,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("073e83a0-57ff-43b8-a2c7-56a54b5ab22c"),
@@ -88,6 +94,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("ec604aff-6706-4c05-8c58-bd72115e3f60"),
@@ -99,6 +106,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("ec604aff-6706-4c05-8c58-bd72115e3f60"),
@@ -110,6 +118,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // PracticeNow
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("deadec4a-1fa4-4ed8-809d-b92eb5fecc6c"),
@@ -121,6 +130,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("deadec4a-1fa4-4ed8-809d-b92eb5fecc6c"),
@@ -132,6 +142,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("32aee329-6675-4ae8-898a-95bb94ea0143"),
@@ -143,6 +154,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("32aee329-6675-4ae8-898a-95bb94ea0143"),
@@ -154,6 +166,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("ef05a03f-a56c-4c86-9485-c08686a466c9"),
@@ -165,6 +178,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("ef05a03f-a56c-4c86-9485-c08686a466c9"),
@@ -176,8 +190,9 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("f34b0017-65e3-4f37-8d1b-4ab096f64046")
             });
 
-            // Group-2
+            // Group-2 User-B
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("0b6799b7-9734-49c2-b701-770ad9601284"),
@@ -189,6 +204,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72")
             });
 
+            // Practice InFuture
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("0b6799b7-9734-49c2-b701-770ad9601284"),
@@ -196,10 +212,11 @@ namespace XUnitTests
                 NativeLanguage = "Flashcard 6 Native",
                 ForeignLanguage = "Flashcard 6 Foreign",
                 CorreactAnsInRow = 5,
-                NextPracticeDate = new DateTime(2021, 5, 7),
+                NextPracticeDate = DateTime.Now.Date.AddDays(10),
                 GroupDbModelId = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("46acf237-9d3c-4fac-8464-0a03ca5d89ae"),
@@ -211,6 +228,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("46acf237-9d3c-4fac-8464-0a03ca5d89ae"),
@@ -222,8 +240,9 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("1d917073-68ea-4e11-b4ae-816f30e33e72")
             });
 
-            // Group-3
+            // Group-3 User-B
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("45433894-5820-413f-93fb-46429ba8486a"),
@@ -235,6 +254,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("d7e0f1ef-49de-486e-b88a-d0e0c1d8f496")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("45433894-5820-413f-93fb-46429ba8486a"),
@@ -246,6 +266,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("d7e0f1ef-49de-486e-b88a-d0e0c1d8f496")
             });
 
+            // Practice Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("58d47aaf-ddcd-47d0-b8a1-4febd4e24c7f"),
@@ -257,6 +278,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("d7e0f1ef-49de-486e-b88a-d0e0c1d8f496")
             });
 
+            // Practice InFuture
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("58d47aaf-ddcd-47d0-b8a1-4febd4e24c7f"),
@@ -264,12 +286,13 @@ namespace XUnitTests
                 NativeLanguage = "Flashcard 8 Native",
                 ForeignLanguage = "Flashcard 8 Foreign",
                 CorreactAnsInRow = 2,
-                NextPracticeDate = new DateTime(2021, 04, 30),
+                NextPracticeDate = DateTime.Now.Date.AddDays(100),
                 GroupDbModelId = Guid.Parse("d7e0f1ef-49de-486e-b88a-d0e0c1d8f496")
             });
 
-            // Group 4
+            // Group 4 User-B
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("0c2c07a0-d258-45b3-817e-d6fe926dee69"),
@@ -281,6 +304,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e")
             });
 
+            // Practice InFuture
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("0c2c07a0-d258-45b3-817e-d6fe926dee69"),
@@ -288,10 +312,11 @@ namespace XUnitTests
                 NativeLanguage = "Flashcard 9 Native",
                 ForeignLanguage = "Flashcard 9 Foreign",
                 CorreactAnsInRow = 1,
-                NextPracticeDate = new DateTime(2021, 12, 3),
+                NextPracticeDate = DateTime.Now.Date.AddDays(150),
                 GroupDbModelId = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("fb014f21-452e-44c2-8538-9503933a1e4e"),
@@ -303,6 +328,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("fb014f21-452e-44c2-8538-9503933a1e4e"),
@@ -314,6 +340,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("e53cdb26-cc6a-47ab-8e46-0451ac4dcfd1"),
@@ -325,6 +352,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e")
             });
 
+            // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
             {
                 Id = Guid.Parse("e53cdb26-cc6a-47ab-8e46-0451ac4dcfd1"),
@@ -336,7 +364,7 @@ namespace XUnitTests
                 GroupDbModelId = Guid.Parse("189d32d1-22b8-4617-8fba-0267880f303e")
             });
 
-            // Group-5
+            // Group-5 User-C
 
             // Learn Now
             FlashcardDbModels.Add(new FlashcardDbModel()
