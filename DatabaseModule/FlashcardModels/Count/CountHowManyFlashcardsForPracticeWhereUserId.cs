@@ -1,25 +1,23 @@
-﻿using DatabaseModule;
+﻿using DatabaseModuleInterface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
-using XUnitTests;
 
-namespace XTestsConsole
+namespace DatabaseModule
 {
-    class Program
+    public class CountHowManyFlashcardsForPracticeWhereUserId : ICountHowManyFlashcardsForPracticeWhereUserId
     {
-        static void Main(string[] args)
+        public int Count(string userId)
         {
-            ResetTestDatabasev6.Reset();
-
             using (var db = new FlashcardsDbContext())
             {
-                var items = db.GroupDbModels
+                return db.GroupDbModels
+                    .Where(e => e.UserId == userId)
                     .Include(e => e.FlashcardDbModels)
                     .SelectMany(e => e.FlashcardDbModels)
                     .Where(e => e.CorreactAnsInRow != null)
                     .Where(e => e.NextPracticeDate <= DateTime.Now.Date)
-                    .ToList();
+                    .Count();
             }
         }
     }
