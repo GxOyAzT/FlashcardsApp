@@ -9,6 +9,11 @@ namespace Processor
         {
             var output = new List<int>();
 
+            if (max == 0)
+            {
+                return output;
+            }
+
             if (max <= 5)
             {
                 output.Add(max);

@@ -7,6 +7,7 @@ order by f.NextPracticeDate
 select * from fc.FlashcardModelTbl f
 join fc.GroupModelTbl g on g.Id = f.GroupDbModelId
 where g.UserId = 'a2c76aeb-94ff-4020-bc19-059877fe8705'
-and f.CorreactAnsInRow is null
+and f.CorreactAnsInRow is not null
 
 select * from fc.GroupModelTbl
+select * from dbo.AspNetUsers

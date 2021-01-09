@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Models;
 using Processor;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace WebUI.Controllers
@@ -16,17 +14,26 @@ namespace WebUI.Controllers
         private readonly ILoadFiveFlashcardsForLearnWherUserId _loadFiveFlashcardsForLearnWherUserId;
         private readonly ILoadFiveFlashcardsForPracticeWhereUserId _loadFiveFlashcardsForPracticeWhereUserId;
         private readonly IReCalculateAndUpdatePracticePropertiesList _reCalculateAndUpdatePracticePropertiesList;
+        private readonly ICalculateIntervalsForHowManyFlashcards _calculateIntervalsForHowManyFlashcards;
+        private readonly ICountHowManyFlashcardsForLearnWhereUserId _countHowManyFlashcardsForLearnWhereUserId;
+        private readonly ICountHowManyFlashcardsForPracticeWhereUserId _countHowManyFlashcardsForPracticeWhereUserId;
 
         public PracticeController(
             UserManager<IdentityUser> userManager, 
             ILoadFiveFlashcardsForLearnWherUserId loadFiveFlashcardsForLearnWherUserId,
             ILoadFiveFlashcardsForPracticeWhereUserId loadFiveFlashcardsForPracticeWhereUserId,
-            IReCalculateAndUpdatePracticePropertiesList reCalculateAndUpdatePracticePropertiesList)
+            IReCalculateAndUpdatePracticePropertiesList reCalculateAndUpdatePracticePropertiesList,
+            ICalculateIntervalsForHowManyFlashcards calculateIntervalsForHowManyFlashcards,
+            ICountHowManyFlashcardsForLearnWhereUserId countHowManyFlashcardsForLearnWhereUserId,
+            ICountHowManyFlashcardsForPracticeWhereUserId countHowManyFlashcardsForPracticeWhereUserId)
         {
             _userManager = userManager;
             _loadFiveFlashcardsForLearnWherUserId = loadFiveFlashcardsForLearnWherUserId;
             _loadFiveFlashcardsForPracticeWhereUserId = loadFiveFlashcardsForPracticeWhereUserId;
             _reCalculateAndUpdatePracticePropertiesList = reCalculateAndUpdatePracticePropertiesList;
+            _calculateIntervalsForHowManyFlashcards = calculateIntervalsForHowManyFlashcards;
+            _countHowManyFlashcardsForLearnWhereUserId = countHowManyFlashcardsForLearnWhereUserId;
+            _countHowManyFlashcardsForPracticeWhereUserId = countHowManyFlashcardsForPracticeWhereUserId;
         }
 
         [HttpGet]
@@ -36,8 +43,6 @@ namespace WebUI.Controllers
             {
                 RedirectToAction("BeforePractice");
             }
-
-
 
             return View();
         }
@@ -51,12 +56,25 @@ namespace WebUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult BeforePractice()
+        public IActionResult BeforePractice(BeforePracticeViewModel model)
         {
-            return View(new BeforePracticeViewModel()
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> BeforePracticeWhereUserId()
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            return RedirectToAction("BeforePractice", new BeforePracticeViewModel()
             {
-                HowManyNewFlashcardsLearnList = new List<int>() { 2,5,10,15},
-                HowManyNewFlashcardsPracticeList = new List<int>() { 2, 5 }
+                HowManyNewFlashcardsLearnList = _calculateIntervalsForHowManyFlashcards
+                .Claculate(_countHowManyFlashcardsForLearnWhereUserId
+                .Count(user.Id)),
+
+                HowManyNewFlashcardsPracticeList = _calculateIntervalsForHowManyFlashcards
+                .Claculate(_countHowManyFlashcardsForPracticeWhereUserId
+                .Count(user.Id))
             });
         }
 

@@ -7,6 +7,14 @@ namespace XUnitTests.Processor
     public class CalculateIntervalsForHowManyFlashcardsTests
     {
         [Fact]
+        public void CalculateIntervalsForHowManyFlashcardsTestH()
+        {
+            var _processor = new CalculateIntervalsForHowManyFlashcards();
+
+            Assert.Equal(_processor.Claculate(0), new List<int>() );
+        }
+
+            [Fact]
         public void CalculateIntervalsForHowManyFlashcardsTestA()
         {
             var _processor = new CalculateIntervalsForHowManyFlashcards();
