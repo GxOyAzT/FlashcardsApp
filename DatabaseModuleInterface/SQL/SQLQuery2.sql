@@ -15,5 +15,5 @@ select * from dbo.AspNetUsers
 
 
 select * from fc.FlashcardModelTbl f
-where f.GroupDbModelId = '1D917073-68EA-4E11-B4AE-816F30E33E72'
+where f.GroupDbModelId = 'F34B0017-65E3-4F37-8D1B-4AB096F64046'
 order by f.NextPracticeDate

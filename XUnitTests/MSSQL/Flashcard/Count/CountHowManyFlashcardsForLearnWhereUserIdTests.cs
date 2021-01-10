@@ -1,7 +1,7 @@
 ﻿using DatabaseModule;
 using Xunit;
 
-namespace XUnitTests.Processor
+namespace XUnitTests.MSSQL
 {
     [Collection("Sequential")]
     public class CountHowManyFlashcardsForLearnWhereUserIdTests
