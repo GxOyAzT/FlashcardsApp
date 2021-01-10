@@ -1,25 +1,17 @@
-﻿var isHidden = false;
+﻿isNavBarShow = false;
 
-function HideOrShowNavigationBar() {
+function HideNavigationBar() {
     var navBar = document.getElementById("NavigationBar");
 
-    if (isHidden) {
-        isHidden = false;
-        if (window.innerWidth < 500) {
-            navBar.style.top = "-200px";
-            return;
-        }
-
-        navBar.style.top = "-200px";
-        return;
+    if (isNavBarShow) {
+        navBar.style.width = "50px";
+        document.getElementById("Shader").style.display = "none";
+        isNavBarShow = false;
+    } else {
+        navBar.style.width = "250px";
+        document.getElementById("Shader").style.display = "block";
+        isNavBarShow = true;
     }
-
-    isHidden = true;
-    if (window.innerWidth < 500) {
-        navBar.style.top = "45px";
-        return;
-    }
-    navBar.style.top = "80px";
 }
 
 function HideErrorMessagesPanel() {

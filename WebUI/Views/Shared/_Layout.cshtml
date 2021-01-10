@@ -13,6 +13,7 @@
     <title>Flashcards</title>
 </head>
 <body>
+    <div id="Shader"></div>
     @if (!User.Identity.IsAuthenticated)
     {
         @RenderBody()
@@ -21,22 +22,40 @@
     {
         <div class="Background"></div>
 
-        <div id="IconContainer" onclick="HideOrShowNavigationBar()">
-        </div>
-
         <div id="NavigationBar">
-            <div class="NBButton">
-                <a class="NBBLink" asp-controller="Manage" asp-action="GroupsList"><img class="NBBLImage" src="/images/folder-icon.png"></a>
-                <div class="NBButtonClue">
-                    <p>Flashcard Groups</p>
+            <div class="NBRow">
+                <div class="NBRHideOrShowButton" onclick="HideNavigationBar()">
+                    <img src="~/images/nav-bar-icon.png" />
                 </div>
             </div>
-            <div class="NBButton">
-                <a class="NBBLink" asp-controller="Home" asp-action="LogOut"><img class="NBBLImage" src="/images/logout-icon.png"></a>
-                <div class="NBButtonClue">
+
+            <div class="NBRow">
+                <a class="NBRLink" href="#">
+                    <img src="~/images/folder-icon-v2.png" />
+                    <p>Folders</p>
+                </a>
+            </div>
+            <div class="NBSeparator">
+            </div>
+
+            <div class="NBRow">
+                <a class="NBRLink" href="#">
+                    <img src="" alt="practice" />
+                    <p>Repeat / Learn</p>
+                </a>
+            </div>
+            <div class="NBSeparator">
+            </div>
+
+            <div class="NBRow">
+                <a class="NBRLink" href="#">
+                    <img src="~/images/log-out-icon-v2.png" />
                     <p>Log out</p>
-                </div>
+                </a>
             </div>
+            <div class="NBSeparator">
+            </div>
+
         </div>
 
         @RenderBody()

@@ -17,85 +17,76 @@
     transform: rotate(-30deg);
 }
 
-#IconContainer {
-    position: fixed;
-    height: 170px;
-    width: 170px;
-    background: #065c03;
-    border-radius: 100%;
-    top: 0;
-    left: 0;
-    transform: translate(-40%, -40%);
-    z-index: 10;
-}
-
 #NavigationBar {
     position: fixed;
-    left: 0;
-    top: -200px;
-    height: auto;
-    width: 70px;
-    background: #087f04;
-    padding-top: 20px;
-    overflow: visible;
-    z-index: 9;
-    transition: top 1s;
+    min-height: 100%;
+    background: #2f2f2f;
+    width: 50px;
+    transition: width 0.5s;
+    z-index: 10;
 }
 
-.NBButton {
+.NBRow {
     position: relative;
-    height: 70px;
-    width: 70px;
-    overflow: visible;
-    z-index: 9;
+    height: 50px;
+    width: 100%;
+    float: left;
+    display: block;
     background: transparent;
-    transition: background 0.5s;
+    overflow: hidden;
 }
 
-.NBButton > a > img{
-    position: relative;
-    height: 90%;
-    
-}
-
-.NBButton:hover .NBButtonClue {
-    transform: translateX(70px);
-}
-
-.NBButton:hover > .NBBLink {
-    background: #11770d;
-}
-
-.NBButtonClue {
-    position: relative;
-    background: #065c03;
-    height: 60px;
-    width: 230px;
-    transform: translateX(-100%);
-    transition: transform 0.5s;
-    z-index: 8;
-    top: 5px;
-}
-
-.NBBLink {
+.NBRHideOrShowButton {
     position: absolute;
+    background: transparent;
+    height: 50px;
+    width: 50px;
+    right: 0px;
+}
+
+.NBRHideOrShowButton > img {
+    background: transparent;
+}
+
+.NBRHideOrShowButton:hover {
+    background: #3a3a3a;
+}
+
+.NBSeparator {
+    height: 1px;
+    background: white;
+    width: 98%;
+    margin: auto;
+}
+
+.NBRLink {
+    display: block;
     height: 100%;
     width: 100%;
-    z-index: 10;
-    background: #087f04;
-}
-
-.NBBLImage {
-    height: 70px;
+    text-decoration: none;
     background: transparent;
-}
-
-.NBButtonClue > p {
-    position: relative;
-    text-align: center;
-    font-size: 27px;
-    background: transparent;
+    outline: none;
     color: white;
+    transition: transform 0.5s;
+    overflow: hidden;
+}
+
+.NBRLink > img {
+    position: absolute;
+    background: #2f2f2f;
+    z-index: 11;
+}
+
+.NBRLink:hover {
+    transform: translateX(9px);
+    transition: transform 0.5s;
+}
+
+.NBRLink > p {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    font-size: 30px;
     top: 50%;
     transform: translateY(-50%);
 }
