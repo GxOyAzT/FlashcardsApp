@@ -5,18 +5,24 @@ namespace WebUI
 {
     public class PracticeViewModel
     {
-        public PracticeViewModel(int totalFlashcards, List<FlashcardPracticeModel> flashcardPracticeModels)
+        public PracticeViewModel(List<FlashcardPracticeModel> flashcardPracticeModels)
         {
-            TotalFlashcards = totalFlashcards;
             FlashcardPracticeModels = flashcardPracticeModels;
         }
 
         public PracticeViewModel()
         {
-
+            FlashcardPracticeModels = new List<FlashcardPracticeModel>();
         }
 
-        public int TotalFlashcards { get; set; }
+        public int TotalFlashcards 
+        { 
+            get
+            { 
+                return FlashcardPracticeModels == null ? 0 : FlashcardPracticeModels.Count; 
+            } 
+        }
+
         public List<FlashcardPracticeModel> FlashcardPracticeModels { get; set; }
     }
 }

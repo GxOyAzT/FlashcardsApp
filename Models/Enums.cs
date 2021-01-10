@@ -8,6 +8,7 @@
 
     public enum FlashcardKnowledge 
     { 
+        Undefined = 0,
         DontKnow = 1,
         AlmostKnow = 2,
         Know = 3

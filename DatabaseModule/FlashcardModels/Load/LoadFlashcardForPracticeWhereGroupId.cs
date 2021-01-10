@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DatabaseModule
 {
-    public class LoadFlashcardForPracticeWhereGroupId : ILoadFlashcardForPracticeWhereGroupId
+    public class LoadFlashcardForPracticeWhereGroupId : ILoadFlashcardsForPracticeWhereGroupId
     {
         public List<FlashcardDbModel> Load(Guid groupId, int howMany)
         {

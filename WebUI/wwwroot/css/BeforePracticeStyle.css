@@ -95,6 +95,23 @@
     transform: translateY(-50%);
 }
 
+.POLWOk {
+    display: block;
+    height: auto;
+    width: calc(100% - 20px);
+    margin: 10px;
+    background: #52b31a;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 45px;
+}
+
+.POLWOk:hover {
+    background: #63d620;
+}
+
 .StartWrapper {
     display: none;
     position: fixed;

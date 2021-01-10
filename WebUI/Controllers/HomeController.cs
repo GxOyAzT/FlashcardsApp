@@ -18,7 +18,7 @@ namespace WebAppAuth.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", new { email = "jakub.koza13@gmail.com", password = "Truskawka1." });
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace WebAppAuth.Controllers
             return View(errorMessages);
         }
 
-        [HttpPost]
+        //[HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
             if (email == null || email == string.Empty || password == null || password == string.Empty)

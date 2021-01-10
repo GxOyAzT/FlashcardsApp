@@ -27,5 +27,20 @@ namespace Models
                 GroupDbModelId = GroupDbModelId
             };
         }
+
+        public FlashcardPracticeModel ConvertToFlashcardPracticeModel()
+        {
+            return new FlashcardPracticeModel()
+            {
+                Id = Id,
+                PracticeDirection = PracticeDirection,
+                NativeLanguage = NativeLanguage,
+                ForeignLanguage = ForeignLanguage,
+                CorreactAnsInRow = CorreactAnsInRow,
+                NextPracticeDate = NextPracticeDate,
+                GroupDbModelId = GroupDbModelId,
+                FlashcardKnowledgeInt = 0
+            };
+        }
     }
 }

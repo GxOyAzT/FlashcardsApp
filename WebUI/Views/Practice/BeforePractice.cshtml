@@ -2,22 +2,23 @@
 
 <div id="MainFrame">
     <div class="PracticeOrLearnWrapper" id="PracticeOrLearnWrapperId">
-        @if (Model.HowManyNewFlashcardsLearnList.Any() || Model.HowManyNewFlashcardsPracticeList.Any())
+        @if (!(Model.HowManyNewFlashcardsLearnList == null && Model.HowManyNewFlashcardsPracticeList == null))
         {
             <p class="Noselect">What do you want?</p>
         }
         else
         {
             <p class="Noselect">You have no more flashcard to learn or practice for today.</p>
+            <a class="POLWOk" asp-action="Index" asp-controller="Manage">OK</a>
         }
         <br />
-        @if (Model.HowManyNewFlashcardsLearnList.Any())
+        @if (Model.HowManyNewFlashcardsLearnList != null)
         {
             <div class="POLWButton Noselect" onclick="SetModeAsLearnNew()">
                 <p>Learn</p>
             </div>
         }
-        @if (Model.HowManyNewFlashcardsPracticeList.Any())
+        @if (Model.HowManyNewFlashcardsPracticeList != null)
         {
             <div class="POLWButton Noselect" onclick="SetModeAsPractice()">
                 <p>Practice</p>
@@ -25,29 +26,37 @@
         }
     </div>
 
-    <div class="HowManyFlashcardsWrapper" id="HowManyFlashcardsLearnWrapperId">
-        <p class="Noselect">How many?</p>
-        @foreach (var number in Model.HowManyNewFlashcardsLearnList)
-        {
-            <div class="HMFWItem" onclick="SetQuantity(@number, 'l')">
-                <p class="Noselect">@number.ToString()</p>
-            </div>
-        }
-    </div>
+    @if (Model.HowManyNewFlashcardsLearnList != null)
+    {
+        <div class="HowManyFlashcardsWrapper" id="HowManyFlashcardsLearnWrapperId">
+            <p class="Noselect">How many?</p>
+            @foreach (var number in Model.HowManyNewFlashcardsLearnList)
+            {
+                <div class="HMFWItem" onclick="SetQuantity(@number, 'l')">
+                    <p class="Noselect">@number.ToString()</p>
+                </div>
+            }
+        </div>
+    }
 
-    <div class="HowManyFlashcardsWrapper" id="HowManyFlashcardsPracticeWrapperId">
-        <p class="Noselect">How many?</p>
-        @foreach (var number in Model.HowManyNewFlashcardsPracticeList)
-        {
-            <div class="HMFWItem" onclick="SetQuantity(@number, 'p')">
-                <p class="Noselect">@number.ToString()</p>
-            </div>
-        }
-    </div>
+
+    @if (Model.HowManyNewFlashcardsPracticeList != null)
+    {
+        <div class="HowManyFlashcardsWrapper" id="HowManyFlashcardsPracticeWrapperId">
+            <p class="Noselect">How many?</p>
+            @foreach (var number in Model.HowManyNewFlashcardsPracticeList)
+            {
+                <div class="HMFWItem" onclick="SetQuantity(@number, 'p')">
+                    <p class="Noselect">@number.ToString()</p>
+                </div>
+            }
+        </div>
+    }
+
 
     <div>
         <form class="StartWrapper" id="StartWrapperId" method="post">
-            <input name="learnOrPractice" type="number" hidden id="ModePracticeLearnId" />
+            <input name="learnOrPractice" type="number" hidden id="ModePracticeLearnId" value="0" />
             <input name="howMany" type="number" hidden id="HowManyFlashcardsId" />
             <input name="groupId" type="text" hidden />
             <button type="submit" class="SWButton" asp-action="BeforePractice">

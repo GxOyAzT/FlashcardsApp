@@ -1,11 +1,11 @@
 ﻿function SetModeAsLearnNew() {
-    document.getElementById("ModePracticeLearnId").value = 1;
+    document.getElementById("ModePracticeLearnId").value = 2;
     document.getElementById("PracticeOrLearnWrapperId").style.display = "none";
     document.getElementById("HowManyFlashcardsLearnWrapperId").style.display = "block";
 }
 
 function SetModeAsPractice() {
-    document.getElementById("ModePracticeLearnId").value = 2;
+    document.getElementById("ModePracticeLearnId").value = 1;
     document.getElementById("PracticeOrLearnWrapperId").style.display = "none";
     document.getElementById("HowManyFlashcardsPracticeWrapperId").style.display = "block";
 }

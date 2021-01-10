@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DatabaseModuleInterface
 {
-    public interface ILoadFlashcardForPracticeWhereGroupId
+    public interface ILoadFlashcardsForPracticeWhereGroupId
     {
         public List<FlashcardDbModel> Load(Guid groupId, int howMany);
     }

@@ -31,6 +31,11 @@ namespace WebUI
             services.AddScoped<ILoadFiveFlashcardsForLearnWherUserId, LoadFiveFlashcardsForLearnWherUserId>();
             services.AddScoped<ILoadFiveFlashcardsForPracticeWhereUserId, LoadFiveFlashcardsForPracticeWhereUserId>();
 
+            services.AddScoped<ILoadFlashcardsForPracticeWhereGroupId, LoadFlashcardForPracticeWhereGroupId>();
+            services.AddScoped<ILoadFlashcardsForLearnWhereGroupId, LoadFlashcardsForLearnWhereGroupId>();
+            services.AddScoped<ILoadFlashcardsForPracticeWhereUserId, LoadFlashcardsForPracticeWhereUserId>();
+            services.AddScoped<ILoadFlashcardsForLearnWhereUserId, LoadFlashcardsForLearnWhereUserId>();
+
             services.AddScoped<IReCalculateAndUpdatePracticePropertiesList, ReCalculateAndUpdatePracticePropertiesList>();
             services.AddScoped<IReCalculateFlashcardPracticeProps, ReCalculateFlashcardPracticeProps>();
             services.AddScoped<IUpdateFlashcardsListPracticeProperties, UpdateFlashcardsListPracticeProperties>();

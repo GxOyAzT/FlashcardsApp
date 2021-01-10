@@ -10,6 +10,7 @@ namespace WebUI
 
     public enum PracticeOrLearn
     {
+        Undefined = 0,
         Practice = 1,
         Learn = 2
     }
