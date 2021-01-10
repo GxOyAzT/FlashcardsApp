@@ -58,7 +58,7 @@
         <form class="StartWrapper" id="StartWrapperId" method="post">
             <input name="learnOrPractice" type="number" hidden id="ModePracticeLearnId" value="0" />
             <input name="howMany" type="number" hidden id="HowManyFlashcardsId" />
-            <input name="groupId" type="text" hidden />
+            <input name="groupId" type="text" hidden value="@Model.GroupId"/>
             <button type="submit" class="SWButton" asp-action="BeforePractice">
                 <p class="Noselect">Start</p>
             </button>

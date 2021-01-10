@@ -20,6 +20,8 @@ namespace WebUI.Controllers
         private readonly ICalculateIntervalsForHowManyFlashcards _calculateIntervalsForHowManyFlashcards;
         private readonly ICountHowManyFlashcardsForLearnWhereUserId _countHowManyFlashcardsForLearnWhereUserId;
         private readonly ICountHowManyFlashcardsForPracticeWhereUserId _countHowManyFlashcardsForPracticeWhereUserId;
+        private readonly ICountHowManyFlashcardsForPracticeWhereGroupId _countHowManyFlashcardsForPracticeWhereGroupId;
+        private readonly ICountHowManyFlashcardsForLearnWhereGroupId _countHowManyFlashcardsForLearnWhereGroupId;
 
         public PracticeController(
             UserManager<IdentityUser> userManager,
@@ -30,7 +32,9 @@ namespace WebUI.Controllers
             IReCalculateAndUpdatePracticePropertiesList reCalculateAndUpdatePracticePropertiesList,
             ICalculateIntervalsForHowManyFlashcards calculateIntervalsForHowManyFlashcards,
             ICountHowManyFlashcardsForLearnWhereUserId countHowManyFlashcardsForLearnWhereUserId,
-            ICountHowManyFlashcardsForPracticeWhereUserId countHowManyFlashcardsForPracticeWhereUserId)
+            ICountHowManyFlashcardsForPracticeWhereUserId countHowManyFlashcardsForPracticeWhereUserId,
+            ICountHowManyFlashcardsForPracticeWhereGroupId countHowManyFlashcardsForPracticeWhereGroupId,
+            ICountHowManyFlashcardsForLearnWhereGroupId countHowManyFlashcardsForLearnWhereGroupId)
         {
             _userManager = userManager;
             _loadFlashcardsForPracticeWhereGroupId = loadFlashcardsForPracticeWhereGroupId;
@@ -41,6 +45,8 @@ namespace WebUI.Controllers
             _calculateIntervalsForHowManyFlashcards = calculateIntervalsForHowManyFlashcards;
             _countHowManyFlashcardsForLearnWhereUserId = countHowManyFlashcardsForLearnWhereUserId;
             _countHowManyFlashcardsForPracticeWhereUserId = countHowManyFlashcardsForPracticeWhereUserId;
+            _countHowManyFlashcardsForPracticeWhereGroupId = countHowManyFlashcardsForPracticeWhereGroupId;
+            _countHowManyFlashcardsForLearnWhereGroupId = countHowManyFlashcardsForLearnWhereGroupId;
         }
 
         [HttpGet]
@@ -64,11 +70,11 @@ namespace WebUI.Controllers
                     model.FlashcardPracticeModels.Add(item.ConvertToFlashcardPracticeModel());
 
             if (practiceOrLearn == PracticeOrLearn.Learn && groupId != null)
-                foreach (var item in _loadFlashcardsForLearnWhereGroupId.Load(Guid.Parse("groupId"), howMany))
+                foreach (var item in _loadFlashcardsForLearnWhereGroupId.Load(Guid.Parse(groupId), howMany))
                     model.FlashcardPracticeModels.Add(item.ConvertToFlashcardPracticeModel());
 
             if (practiceOrLearn == PracticeOrLearn.Practice && groupId != null)
-                foreach (var item in _loadFlashcardsForPracticeWhereGroupId.Load(Guid.Parse("groupId"), howMany))
+                foreach (var item in _loadFlashcardsForPracticeWhereGroupId.Load(Guid.Parse(groupId), howMany))
                     model.FlashcardPracticeModels.Add(item.ConvertToFlashcardPracticeModel());
 
             return View(model);
@@ -102,6 +108,23 @@ namespace WebUI.Controllers
                 HowManyNewFlashcardsPracticeList = _calculateIntervalsForHowManyFlashcards
                 .Claculate(_countHowManyFlashcardsForPracticeWhereUserId
                 .Count(user.Id))
+            });
+        }
+
+        [HttpGet]
+        public IActionResult BeforePracticeWhereGroupId(string groupId)
+        {
+            return RedirectToAction("BeforePractice", new BeforePracticeViewModel()
+            {
+                HowManyNewFlashcardsLearnList = _calculateIntervalsForHowManyFlashcards
+                .Claculate(_countHowManyFlashcardsForLearnWhereGroupId
+                .Count(Guid.Parse(groupId))),
+
+                HowManyNewFlashcardsPracticeList = _calculateIntervalsForHowManyFlashcards
+                .Claculate(_countHowManyFlashcardsForPracticeWhereGroupId
+                .Count(Guid.Parse(groupId))),
+
+                GroupId = groupId
             });
         }
 

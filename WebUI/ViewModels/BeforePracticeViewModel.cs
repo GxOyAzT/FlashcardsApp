@@ -6,6 +6,7 @@ namespace WebUI
     {
         public List<int> HowManyNewFlashcardsLearnList { get; set; }
         public List<int> HowManyNewFlashcardsPracticeList { get; set; }
+        public string GroupId { get; set; }
     }
 
     public enum PracticeOrLearn

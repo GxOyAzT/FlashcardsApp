@@ -45,6 +45,8 @@ namespace WebUI
             services.AddScoped<ICalculateIntervalsForHowManyFlashcards, CalculateIntervalsForHowManyFlashcards>();
             services.AddScoped<ICountHowManyFlashcardsForLearnWhereUserId, CountHowManyFlashcardsForLearnWhereUserId>();
             services.AddScoped<ICountHowManyFlashcardsForPracticeWhereUserId, CountHowManyFlashcardsForPracticeWhereUserId>();
+            services.AddScoped<ICountHowManyFlashcardsForPracticeWhereGroupId, CountHowManyFlashcardsForPracticeWhereGroupId>();
+            services.AddScoped<ICountHowManyFlashcardsForLearnWhereGroupId, CountHowManyFlashcardsForLearnWhereGroupId>();
         }
     }
 }
