@@ -9,14 +9,19 @@
   border-radius: 15px;
 }
 
+.MainFrame{
+    position: absolute;
+    top: 50px;
+}
+
 #CreateNewGroupButton > img {
-  position: relative;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  float: left;
-  left: 10px;
-  background: transparent;
+    position: relative;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    left: 10px;
+    background: transparent;
 }
 
 #CreateNewGroupButton > p {

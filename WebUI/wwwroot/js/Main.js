@@ -4,11 +4,11 @@ function HideNavigationBar() {
     var navBar = document.getElementById("NavigationBar");
 
     if (isNavBarShow) {
-        navBar.style.width = "50px";
+        navBar.style.height = "50px";
         document.getElementById("Shader").style.display = "none";
         isNavBarShow = false;
     } else {
-        navBar.style.width = "250px";
+        navBar.style.height = "210px";
         document.getElementById("Shader").style.display = "block";
         isNavBarShow = true;
     }
