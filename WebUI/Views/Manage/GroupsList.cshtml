@@ -21,7 +21,7 @@
                     <a class="BFBWDetails" asp-action="FlashcardsList" asp-route-groupId="@(group.Id.ToString())">
                         <img src="/images/modify-icon.png" />
                     </a>
-                    <a href="#" class="BFBWPractice">
+                    <a asp-controller="Practice" asp-action="BeforePracticeWhereGroupId" asp-route-groupId="@(group.Id.ToString())" class="BFBWPractice">
                         <img src="" alt="practice" />
                     </a>
                 </div>

@@ -18,7 +18,8 @@ namespace WebAppAuth.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Login", new { email = "jakub.koza13@gmail.com", password = "Truskawka1." });
+            return View();
+            //return RedirectToAction("Login", new { email = "jakub.koza13@gmail.com", password = "Truskawka1." });
         }
 
         [HttpGet]

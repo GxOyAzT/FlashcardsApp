@@ -44,7 +44,7 @@ namespace WebUI
             }
             else
             {
-                app.UseHsts();
+                app.UseExceptionHandler("/Error");
             }
 
             app.UseHttpsRedirection();
