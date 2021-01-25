@@ -22,6 +22,8 @@ namespace WebUI.Controllers
         private readonly ICreateFlashcard _createFlashcard;
         private readonly IUpdateFlashcard _updateFlashcard;
         private readonly IDeleteFlashcard _deleteFlashcard;
+        private readonly ICountHowManyFlashcardsUserHas _countHowManyFlashcardsUserHas;
+        private readonly ICountNewFlashcardsWhereUserId _countNewFlashcardsWhereUserId;
 
         public ManageController(
             UserManager<IdentityUser> userManager, 
@@ -32,7 +34,9 @@ namespace WebUI.Controllers
             ILoadFlashcardsWhereGroupId loadFlashcardsWhereGroupId,
             ICreateFlashcard createFlashcard,
             IUpdateFlashcard updateFlashcard,
-            IDeleteFlashcard deleteFlashcard)
+            IDeleteFlashcard deleteFlashcard,
+            ICountHowManyFlashcardsUserHas countHowManyFlashcardsUserHas,
+            ICountNewFlashcardsWhereUserId countNewFlashcardsWhereUserId)
         {
             _loadAllUserGroups = loadAllUserGroups;
             _userManager = userManager;
@@ -43,11 +47,19 @@ namespace WebUI.Controllers
             _createFlashcard = createFlashcard;
             _updateFlashcard = updateFlashcard;
             _deleteFlashcard = deleteFlashcard;
+            _countHowManyFlashcardsUserHas = countHowManyFlashcardsUserHas;
+            _countNewFlashcardsWhereUserId = countNewFlashcardsWhereUserId;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var user = await _userManager.GetUserAsync(User);
+
+            return View(new ManageIndexViewModel()
+            {
+                FlashcardsCount = _countHowManyFlashcardsUserHas.Count(user.Id),
+                FlashcardsForLearnCount = _countNewFlashcardsWhereUserId.Count(user.Id)
+            });
         }
 
 

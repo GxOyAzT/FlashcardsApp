@@ -1,1 +1,10 @@
-﻿
+﻿@model ManageIndexViewModel
+
+<div style="color: white;">
+    <div>
+        All flashcards: @(Model.FlashcardsCount.ToString())
+    </div>
+    <div>
+        Flashcards for count: @(Model.FlashcardsForLearnCount.ToString())
+    </div>
+</div>

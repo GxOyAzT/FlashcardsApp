@@ -184,10 +184,18 @@
         display: none;
     }
 
-    .LoginRegisterMainContainer {
+    .LoginContainer, .RegisterContainer {
         position: absolute;
+    }
+
+    LoginRegisterMainContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         height: 80%;
-        width: 150%;
+        width: 80%;
+        background: red;
     }
 
     #ButtonChangeToLogIn {

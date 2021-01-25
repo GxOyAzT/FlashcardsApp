@@ -1,6 +1,5 @@
 ﻿using System;
 using Xunit;
-using DatabaseModuleInterface;
 using DatabaseModule;
 
 namespace XUnitTests.MSSQL
