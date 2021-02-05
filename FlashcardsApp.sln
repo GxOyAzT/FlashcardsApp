@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Processor", "Processor\Proc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseModulePostgreSQL", "DatabaseModulePostgreSQL\DatabaseModulePostgreSQL.csproj", "{48073FDE-930D-4205-88D7-0255034EA5DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{09F742EA-233D-442A-ADA2-CE606063F009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "WebUI\WebUI.csproj", "{09F742EA-233D-442A-ADA2-CE606063F009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{17681FEB-948B-4A95-9F2D-1F15C2AA8255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{09F742EA-233D-442A-ADA2-CE606063F009}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09F742EA-233D-442A-ADA2-CE606063F009}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09F742EA-233D-442A-ADA2-CE606063F009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17681FEB-948B-4A95-9F2D-1F15C2AA8255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17681FEB-948B-4A95-9F2D-1F15C2AA8255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17681FEB-948B-4A95-9F2D-1F15C2AA8255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17681FEB-948B-4A95-9F2D-1F15C2AA8255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

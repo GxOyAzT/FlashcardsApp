@@ -13,8 +13,8 @@ namespace XUnitTests.MSSQL
 
             CountNewFlashcardsWhereUserId _process = new CountNewFlashcardsWhereUserId();
 
-            Assert.Equal(
-                _process.Count("00782523-7206-403a-b953-75cfa7ccb4e1"), 4);
+            Assert.True(
+                _process.Count("00782523-7206-403a-b953-75cfa7ccb4e1") == 4);
         }
 
         [Fact]
